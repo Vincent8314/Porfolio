@@ -1,0 +1,552 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--text-grey-black);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   COLOR : ROOT
+   ========================================================================== */
+:root {
+    --text-grey-black: #222;
+    --purple:rgba(120, 70, 233, 1);
+    --primary-white: #fafafaf8;
+    --primary-white-no-filter: #fafafaff;
+}
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+
+header {
+    display: flex;
+    background-color: var(--primary-white);
+    position: fixed;
+    min-height: 8rem;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    border-top: 1px solid rgba(256, 256, 256, 0.5);
+    box-shadow: 0 1px 1px 1px rgba(256, 256, 256, 0.2);
+    transition: 0.5s ease;
+    z-index: 1000;
+}
+
+/* Logo & Name Section */
+.logo-name {
+    display: flex;
+    min-width: 18rem;
+    margin: 0;
+    padding: 0;
+    /* background-color: #6f86ff; */ /* only activate on test */
+}
+
+.logo-name > img {
+    display: inline-block;
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 3rem;
+    min-height: 5rem;
+    max-height: 5rem;
+    min-width: 5rem;
+    max-width: 5rem;
+    margin: 0 1rem 0 2rem;
+    transition: 0.5s ease;
+    border: 0.0625rem solid rgba(120, 70, 233, 0.25);
+    box-shadow: 0 1px 1px 1px rgba(256, 256, 256, 0.2);
+}
+
+.logo-name > p {
+    display: inline-block; /* same that .logo>img */
+    min-width: 11rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.02rem;
+    color: rgba(120, 70, 233, 1);
+    text-shadow: 1px 1px 1px rgba(120, 70, 233, 0.1);
+    margin: auto 0; /* keep text center and aline with logo-name and img */
+}
+
+/* ==========================================================================
+   NAVIGATION SECTION
+   ========================================================================== */
+
+nav {
+    padding: 0;
+    display: flex;
+    height: 6rem; /* same then header */
+    width: 100%;
+}
+
+/* Large Screen Menu */
+nav > .menu-large {
+    /* display: flex;  */ /* already in media keep in comment to keep responive */
+    min-width: 100%;
+    margin: 0;
+    padding-right: 2.5rem;
+
+}
+
+nav > .menu-large > ul {
+    display: flex;
+    min-width: 100%;
+    justify-content: flex-end; /* put all the li at by the end */
+    align-items: center;
+}
+
+nav > .menu-large > ul > li {
+    color: #333; /* a was reset by --- a { color: inherit; } at top of css page */
+    padding-left: 2rem; /* padding right by nav>.menu-large */
+}
+
+nav > .menu-large > ul > li > a {
+    color: #333; /* a was reset by --- a { color: inherit; } at top of css page */
+    padding-left: 1rem; /* padding right by nav>.menu-large */
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    transition: 0.2s ease;
+}
+
+nav > .menu-large > ul > li > a:hover {
+    color: rgba(120, 70, 233, 1);
+    text-decoration: 2px underline;
+    transform: scale(1.02);
+}
+
+nav > .menu-large > ul > li > a:active {
+    color: rgba(120, 70, 233, 1);
+    text-decoration: 2px underline;
+    transform: scale(0.99);
+}
+
+/* Mobile Off-Screen Menu */
+.off-screen-menu {
+    /* display: flex; */ /* already in @media */
+    position: absolute;
+    top: 7rem;
+    width: 100%;
+    max-width: 768px;
+    min-height: 10rem;
+    right: -768px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: 0.5s ease;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+.off-screen-menu > ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.off-screen-menu > ul > li {
+    display: flex;
+    background-color: #fafafaee;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    min-width: 100vw;
+    text-align: center;
+    box-shadow: 0 0 2px rgba(256, 256, 256, 0.6);
+}
+
+.off-screen-menu > ul > li > a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    margin: 0;
+    padding: 0;
+    transform: 0.3s ease;
+}
+
+.off-screen-menu > ul > li > a:hover {
+    color: rgba(120, 70, 233, 1);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.off-screen-menu > ul > li > a:active {
+    color: rgba(120, 70, 233, 1);
+    transform: scale(0.99);
+}
+
+.off-screen-menu > ul > li:nth-child(1) {
+    margin: 0;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(120, 70, 233, 01);
+    border-top: 1px solid rgba(120, 70, 233, 0.78);
+}
+.off-screen-menu > ul > li:nth-child(2) {
+    margin: 0;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(120, 70, 233, 1);
+}
+.off-screen-menu > ul > li:nth-child(3) {
+    margin: 0;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(120, 70, 233, 1);
+}
+.off-screen-menu > ul > li:nth-child(4) {
+    margin: 0;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgba(120, 70, 233, 1);
+    
+}
+/* Hamburger Menu */
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin: auto 2rem auto auto; /* to push to the rigth and keep center into Header */
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.ham-menu span {
+    min-height: 0.25rem;
+    max-height: 0.25rem;
+    width: 100%;
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%; /* place the left part of the span at the midle of the element */
+    left: 50%; /* place the left part of the span at the midle of the element */
+    transform: translate(-50%, -50%); /* place the element span at the center by is own center */
+    transition: 0.4s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(2) {
+    top: 50%;
+    transition: 0s ease;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+/* ==========================================================================
+   MAIN CONTENT SECTION
+   ========================================================================== */
+
+section {
+    display: flex;
+    max-height: 100vh;
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+}
+
+/* ========================== SECTION HOME ========================= */
+
+main {
+    position: relative;
+}
+
+main > section:nth-child(1) {
+    background-color: gray;
+    position: relative;
+}
+main > section > div:nth-child(1) { /* all the child of... */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main > section:nth-child(1) > div:nth-child(1) {
+    position: absolute;
+    left: -2.5rem; /* half of min-width to keep 0 left edge */
+    top: 45%;
+    bottom: 55%;
+    translate: 50%;
+    min-height: 14rem ;
+    min-width: 5rem; /* double of min-width to keep 0 left edge */
+    max-width: 5rem; /* double of min-width to keep 0 left edge */
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.svg {
+    background-color: var(--primary-white-no-filter);
+}
+
+.svg > a {
+    display: inline-block;
+    min-width: 3rem;
+    min-height: 3rem;
+}
+
+.svg > a:nth-child(1) {
+    margin: 0.75rem 0 1.25rem 0;
+    padding: 0;
+}
+.svg > a:nth-child(2) {
+    margin: 0 0 1.25rem 0;
+    padding: 0;
+}
+.svg > a:nth-child(3) {
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+}
+
+.svg > a > img {
+    display: inline-block;
+    min-width: 3rem;
+    min-height: 3rem;
+    filter: invert(70%) sepia(76%) saturate(10000%) hue-rotate(220deg) brightness(70%) contrast(80%);
+}
+
+.home-paragraph {
+    display: flex;
+    flex-direction: column;
+    background: 
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), /* white overlay */
+    url("./images/purp-background-2.png");
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    max-height: 100vh;
+}
+
+.home-paragraph h1 {
+  max-width: 50%;
+  text-align: center;
+  font-size: 3.5rem;
+  padding: 0;
+  margin: 7rem;
+  margin-bottom: 1rem;
+}
+.home-paragraph h2 {
+    max-width: 70%;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04rem;
+    text-align: center;
+    padding: 0;
+    margin: 1rem;
+}
+
+.home-paragraph button {
+    max-width: 50%;
+    text-align: center;
+    font-weight: 500;
+    margin: 4rem auto;
+    padding: 0;
+    color: var(--primary-white);
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    transition: 0.2s ease;
+}
+
+.home-paragraph button a {
+    padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
+    display: inline-block;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px #ffffff33;
+    width: 100%;
+}
+
+.home-paragraph button:hover {
+    transform: scale(1.03);
+}
+.home-paragraph button:active {
+    transform: scale(0.99);
+}
+.home-paragraph button {
+    transform: scale(1.02);
+}
+
+
+
+/* ========================== SECTION ABOUT ========================= */
+
+main > section:nth-child(2) {
+    background-color: yellow;
+}
+main > section:nth-child(2) > * { /* all the child of... */
+    display: flex;
+}
+
+/* ========================== SECTION PROJECT ========================= */
+
+main > section:nth-child(3) {
+    background-color: burlywood;
+}
+main > section:nth-child(3) > * { /* all the child of... */
+    display: flex;
+}
+
+/* ========================== SECTION CONTACT ========================= */
+
+main > section:nth-child(4) {
+    background-color: darkgreen;
+}
+
+main > section:nth-child(4) > * { /* all the child of... */
+    display: flex;
+}
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+
+footer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 6rem;
+    background-color: pink;
+}
+
+/* ==========================================================================
+   JAVASCRIPT ACTIVE STATES
+   ========================================================================== */
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: blue;
+}
+
+.ham-menu.active span:nth-child(2) {
+    display: none;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Desktop - Large Screens */
+@media (min-width: 768px) {
+    .ham-menu {
+        display: none;
+    }
+    .off-screen-menu {
+        display: none;
+    }
+    .menu-large {
+        display: flex;
+    }
+}
+
+/* Mobile - Small Screens */
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+        height: 48px;
+        width: 48px;
+        margin: auto 1.8rem auto auto; /* to push to the rigth and keep center into Header */
+        padding-right: 1rem;
+    }
+    .off-screen-menu {
+        display: flex;
+        top: 7.75rem; /* fit with @queries header  */
+        background-color: var(--primary-white-no-filter);
+    }
+    .menu-large {
+        display: none;
+    }
+    .logo-name > img {
+        margin: 0 0.9rem 0 1.75rem;
+    }
+    header {
+        min-height: 7.85rem; /* fit with @queries .offscreen-menu */
+        background-color: var(--primary-white-no-filter);
+    }
+}
+
+@media (max-width: 670px) {
+    .ham-menu {
+        height: 46px;
+        width: 46px;
+        margin: auto 1.6rem auto auto; /* to push to the rigth and keep center into Header */
+        padding-right: 1rem;
+    }
+    .off-screen-menu {
+        display: flex;
+        top: 7.5rem; /* fit with @queries header  */
+        background-color: var(--primary-white-no-filter);
+    }
+    .logo-name > img {
+        margin: 0 0.8rem 0 1.5rem;
+    }
+    header {
+        min-height: 7.6rem;
+        background-color: var(--primary-white-no-filter);
+    }
+}
+
+@media (max-width: 576px) {
+    .ham-menu {
+        height: 42px;
+        width: 42px;
+        margin: auto 1.4rem auto auto; /* to push to the rigth and keep center into Header */
+        padding-right: 1rem;
+    }
+    .off-screen-menu {
+        display: flex;
+        top: 7rem; /* fit with @queries header  */
+        background-color: var(--primary-white-no-filter);
+    }
+    .logo-name > img {
+        margin: 0 0.7rem 0 1.25rem;
+    }
+    header {
+        min-height: 7.1rem; /* 0.1rem biger then .offscreen-menu to hide the border bottom and keep design border-top of the first child li above */
+        background-color: var(--primary-white-no-filter);
+    }
+}
