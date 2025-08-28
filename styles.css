@@ -529,7 +529,7 @@ footer {
         background-color: var(--primary-white-no-filter);
     }
 }
-
+/*  */
 @media (max-width: 576px) {
     .ham-menu {
         height: 42px;
