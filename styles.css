@@ -637,10 +637,10 @@ footer {
     }
 
     .home-paragraph button {
-        max-width: 50%;
+        max-width: 60%;
         text-align: center;
         font-weight: 500;
-        margin: 2.5rem auto;
+        margin: 2rem auto;
         padding: 0;
         color: var(--primary-white);
         background-color: rgba(120, 70, 233, 1);
