@@ -11,7 +11,9 @@ body {
     padding: 0;
     position: relative;
     font-family: "Source Sans 3", sans-serif;
-    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-optical-sizing: auto; /* check how to works this line */
     font-size: 1rem;
 }
 
@@ -34,7 +36,18 @@ a {
 strong {
     font-weight: inherit;
     font-size: inherit;
-    font-family: inherit;
+}
+
+h3 {
+    color:#222;
+}
+
+.text-shadow {
+    text-shadow: 0 0 1px #fff;
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px 1px #fff;
 }
 
 
@@ -43,10 +56,12 @@ strong {
    ========================================================================== */
 :root {
     --text-grey-black: #222;
+    --text-white: rgba(230,230,230, 1);
     --purple:rgba(120, 70, 233, 1);
     --primary-white: #fafafaf8;
     --primary-white-no-filter: #fafafaff;
     --blue-link: #0000ffc0;
+    --blue-link-0: #4444ffc0;
 }
 /* ==========================================================================
    HEADER SECTION
@@ -56,8 +71,8 @@ header {
     display: flex;
     background-color: var(--primary-white);
     position: fixed;
-    min-height: 7rem;
-    max-height: 7rem;
+    min-height: 8rem;
+    max-height: 8rem;
     flex-direction: row;
     align-items: center;
     width: 100%;
@@ -111,17 +126,15 @@ header {
 nav {
     padding: 0;
     display: flex;
-    height: 6rem; /* same then header */
+    height: 8rem; /* same then header */
     width: 100%;
 }
 
-/* Large Screen Menu */
 nav > .menu-large {
     /* display: flex;  */ /* already in @media keep in comment to keep responive */
     min-width: 100%;
     margin: 0;
     padding-right: 2.5rem;
-
 }
 
 nav > .menu-large > ul {
@@ -132,8 +145,8 @@ nav > .menu-large > ul {
 }
 
 nav > .menu-large > ul > li {
-    color: #333; /* a was reset by --- a { color: inherit; } at top of css page */
-    padding-left: 2rem; /* padding right by nav>.menu-large */
+    color: #333;
+    padding-left: 2rem; /* padding right already set with:  nav>.menu-large */
 }
 
 nav > .menu-large > ul > li > a {
@@ -286,7 +299,6 @@ nav > .menu-large > ul > li > a:active {
        margin: 0;
        padding: 0;
        background-color: brown;
-       background-color: gray;
        position: relative;
    }
 
@@ -367,10 +379,17 @@ main {
     max-width: 70%;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.025rem;
+    word-spacing: 0.05rem;
     text-align: center;
     padding: 0;
     margin: 1rem;
+}
+
+.home-paragraph h2 .UI-UX {
+    font-size: inherit;
+    font-weight: inherit;
+    word-spacing: -0.2rem;
 }
 
 button {
@@ -418,6 +437,8 @@ button a {
 
 /* ========================== SECTION ABOUT ========================= */
 
+
+
 #about {  
     height: auto;
     position: relative;
@@ -439,6 +460,7 @@ button a {
     padding-top: 9rem;
     top: 0;
     flex-direction: column;
+    transition: 0.5s ease;
 }
 #about .about-header > * {
     display: inline-block;
@@ -473,7 +495,7 @@ button a {
 }
 
 #about > .about-header > h2, #about .about-header > p {
-    width: min(50rem,90%);
+    width: min(50rem,85%);
     text-align: center;
 }
 
@@ -488,18 +510,14 @@ button a {
 #about > .about-content > * {
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
-    width: min(50rem,45%);
+    width: min(45rem,45%);
     height :auto;
 }
+/************************************* ABOUT LEFT *********************************/
 
 #about > .about-content > .about-left {
-    /* background-color: red; */
     height: auto;
-}
-#about > .about-content > .about-right  {
-    background-color: blue; 
-    height: auto;
+    display: flex;
 }
 
 #about > .about-content > .about-left > h3 {
@@ -513,7 +531,7 @@ button a {
     font-size: 1.2rem;
     color: #333;
     margin: 0;
-    padding: 0 8% 0 0;
+    padding: 0 9% 0 0;
 }
 #about > .about-content > .about-left > p > .strong {
     font-weight: 700;
@@ -529,10 +547,12 @@ button a {
     margin-left: 0;
     margin-right: auto;
     padding: 0;
-    background-color: var(--blue-link);
-    box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
+    margin: 2rem auto 4rem 0;
+    background-color: var(--purple);
+    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
     transition: 0.3s ease;
 }
+
 #about > .about-content > .about-left > button:hover {
     transform: translate(0px, -2px) scale(1.02);
 }
@@ -547,51 +567,65 @@ button a {
     font-weight: 600;
     margin: 0;
 }
-#about > .about-content > .about-right > .skills-item {
-    display: flex;
-    flex-direction: row;
-    background-color: pink;
-    padding: 0;
-    margin: 0;
-}
 
-#about > .about-content > .about-right > .skills-item > div{
-    display: inline-block;
-    flex-direction: row;
-    background-color: greenyellow;
-    padding: 0.5rem;
-    margin: 1rem;
-}
-#about > .about-content > .about-right > h3 {
-    display: inline-block;
-    font-size: 2rem;
+/**************************************** ABOUT RIGHT ***********************************/
+
+#about > .about-content > .about-right  {
+    /* background-color: blue;  */
+    display: flex;
+    height: auto;
     margin: 0;
     padding: 0 0 2rem 0;
 }
 
-@media (max-width: 996px) {
+#about > .about-content > .about-right > h3 {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0;
+    padding:0 0 1.5rem 0;
+}
+
+#about > .about-content > .about-right > .skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-item {
+    display: inline-block;
+    flex-direction: row;
+    background-color: var(--blue-link-0);
+    padding: 0.35rem 1rem;
+    margin: 0 1.15rem 1.15rem 0;
+    border-radius: 0.25rem;
+}
+
+.skills-item > P {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 996px) {    
     #about {  
         height: auto;
         position: relative;
         min-width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: yellow;
-        flex-direction: column;
-        justify-content: left;
-        align-items: center;
+        min-height: auto;
     }
     
     #about > .about-header {
         display: flex;
         max-height: auto;
-        background-color: purple;
         min-width: 100%;
         position: relative;
-        padding-top: 8REM; /* % TO 8REM */
+        padding-top: 7rem; /* % TO 8REM */
         top: 0;
         flex-direction: column;
     }
+
     #about .about-header > * {
         display: inline-block;
         margin-left: auto;
@@ -600,29 +634,38 @@ button a {
     }
     
     #about .about-header > h2 {
-        font-size: 2.8rem;
+        font-size: 2.75rem;
+        letter-spacing: 0.085rem;
+        word-spacing: 0.2rem;
+        text-shadow: 0px 0px 1px #fff;
     }
     
     #about .about-divider {
         display: block;
-        width: 50px;
-        height: 0.25rem;
-        background-color: #333;
-        margin: 1.5rem auto 1rem; /* top(1)-----left&nbsp;rigth(2)-----bottom(3) */
+        width: 5rem;
+        height: 0.3rem;
+        background-color: var(--blue-link);
+        margin: 1rem auto 1.25rem; /* top(1)-----left&nbsp;rigth(2)-----bottom(3) */
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
     }
     #about .about-header > p {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
+        font-weight: 500;
+        padding-bottom: 2%;
+        text-shadow: 0px 0px 1px #fff;
     }
     
     #about > .about-header > h2, #about .about-header > p {
-        width: min(50rem,90%);
+        width: min(50rem,85%);
         text-align: center;
     }
     
     #about > .about-content {
         display: flex;
-        flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
+        flex-direction: column;
         justify-content: center;
         padding-left: 0;
         padding-right: 0;
@@ -630,62 +673,107 @@ button a {
     
     #about > .about-content > * {
         display: flex;
+        flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
         height :auto;
-        flex-direction: column; 
-        background-color: red;
-        width: min(50rem,65%); /*996PX CHANGE */
-        height :auto;
-        padding-left: 5%;
     }
-    
     #about > .about-content > .about-left {
-        background-color: red;
-        width: min(50rem,70%); /*996PX CHANGE */
-        height: auto;
+        width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
+        margin-left: 5%;
+        margin-right: 5%;
     }
     #about > .about-content > .about-right  {
-        background-color: blue; 
-        width: min(50rem,95%); /*996PX CHANGE */
+        width: min(50rem,99%); /* SAME THEN LEFT TO KEEP RESPONSIVE */
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /************************************* ABOUT LEFT *********************************/
+    
+    #about > .about-content > .about-left {
         height: auto;
+        display: flex;
     }
     
     #about > .about-content > .about-left > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
-        padding: 1rem 1rem 1rem 0;
+        padding: 0 0 2rem 0;
     }
     #about > .about-content > .about-left > p {
         display: inline-block;
         font-size: 1.2rem;
         color: #333;
         margin: 0;
-        padding: 0 8% 0 0;
+        padding: 0 9% 0 0;
+    }
+    #about > .about-content > .about-left > p > .strong {
+        font-weight: 700;
+    }
+    #about > .about-content > .about-left > p > a > .strongLink {
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 0.04rem;
+        color: var(--blue-link);
+        text-decoration: 2px solid underline;
+    }
+    #about > .about-content > .about-left > button > .contactButton{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    #about > .about-content > .about-left > button:hover {
+        transform: translate(0px, -2px) scale(1.02);
+    }
+    #about > .about-content > .about-left > button:active {
+        transform: scale(1);
+    }
+    .contactButton {
+        padding:0.7rem 1.4rem;
+        font-family: "Source Sans 3", sans-serif;
+        text-shadow: none;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
     }
     
-    #about > .about-content > .about-left > button {
-        margin-left: 0;
-        margin-right: auto;
+    /**************************************** ABOUT RIGHT ***********************************/
+    
+    #about > .about-content > .about-right  {
+        /* find rules just above .about-left */
     }
     
+    #about > .about-content > .about-right > h3 {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+        padding:0 0 1.5rem 0;
+    }
     
-    #about > .about-content > .about-right > .skills-item {
+    #about > .about-content > .about-right > .skills {
         display: flex;
         flex-direction: row;
-        background-color: palevioletred;
+        flex-wrap: wrap;
         padding: 0;
         margin: 0;
     }
     
-    #about > .about-content > .about-right > .skills-item > div{
+    .skills-item {
         display: inline-block;
         flex-direction: row;
-        background-color: greenyellow;
-        padding: 0.5rem;
-        margin: 1rem;
+        background-color: var(--blue-link-0);
+        padding: 0.35rem 1rem;
+        margin: 0 1.15rem 1.15rem 0;
+        border-radius: 0.25rem;
+    }
+    
+    .skills-item > P {
+        color: var(--text-white);
+        font-weight: 600;
+        font-size: 1.2rem;
     }
 
 }
+
 
 /* ========================== SECTION PROJECT ========================= */
 
@@ -780,6 +868,7 @@ footer {
     }
     header {
         min-height: 7.85rem; /* fit with @queries .offscreen-menu */
+        max-height: 7.85rem; 
         background-color: var(--primary-white-no-filter);
     }
     #home>.svg {
@@ -834,6 +923,7 @@ footer {
     }
     header {
         min-height: 7.6rem;
+        max-height: 7.6rem;
         background-color: var(--primary-white-no-filter);
     }
     #home>.svg {
@@ -888,7 +978,7 @@ footer {
     }
     header {
         min-height: 7.1rem; /* 0.1rem biger then .offscreen-menu to hide the border bottom and keep design border-top of the first child li above */
-        background-color: var(--primary-white-no-filter);
+        max-height: 7.1rem; 
     }
     #home>.svg {
     display: none;
