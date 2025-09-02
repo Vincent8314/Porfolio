@@ -47,7 +47,7 @@ h3 {
 }
 
 .box-shadow {
-    box-shadow: 0 0 10px 1px #fff;
+    text-shadow: 0 0 3px #ffff;
 }
 
 
@@ -583,6 +583,7 @@ button a {
     font-size: 2rem;
     margin: 0;
     padding:0 0 1.5rem 0;
+    text-shadow: 0 0 3px #ffff;
 }
 
 #about > .about-content > .about-right > .skills {
@@ -596,20 +597,21 @@ button a {
 .skills-item {
     display: inline-block;
     flex-direction: row;
-    background-color: var(--blue-link-0);
+    background-color: #cbabff;
     padding: 0.35rem 1rem;
     margin: 0 1.15rem 1.15rem 0;
     border-radius: 0.25rem;
+    box-shadow: 0 0 1px 1px #fff6;
 }
 
 .skills-item > P {
-    color: var(--text-white);
     font-weight: 600;
     font-size: 1.2rem;
 }
 
 @media (max-width: 996px) {    
     #about {  
+        color:var(--purple);
         height: auto;
         position: relative;
         min-width: 100%;
@@ -621,7 +623,7 @@ button a {
         max-height: auto;
         min-width: 100%;
         position: relative;
-        padding-top: 7rem; /* % TO 8REM */
+        padding-top: 8rem; /* % TO 8REM */
         top: 0;
         flex-direction: column;
     }
@@ -760,14 +762,14 @@ button a {
     .skills-item {
         display: inline-block;
         flex-direction: row;
-        background-color: var(--blue-link-0);
+        background-color: #cbabff;
+        box-shadow: 0 0 1px 1px #fff6;
         padding: 0.35rem 1rem;
         margin: 0 1.15rem 1.15rem 0;
         border-radius: 0.25rem;
     }
     
     .skills-item > P {
-        color: var(--text-white);
         font-weight: 600;
         font-size: 1.2rem;
     }
@@ -904,6 +906,9 @@ footer {
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
+        #about > .about-header {
+        padding-top: 8rem;
+    }
 }
 
 @media (max-width: 670px) {
@@ -959,6 +964,9 @@ footer {
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
+        #about > .about-header {
+        padding-top: 7.5rem;
+    }
 }
 /*  */
 @media (max-width: 576px) {
@@ -1012,6 +1020,9 @@ footer {
         border-radius: 0.35rem;
         border: 1px solid #6668;
         transition: 0.2s ease;
+    }
+    #about > .about-header {
+    padding-top: 7rem;
     }
 }
 
