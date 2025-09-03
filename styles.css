@@ -43,7 +43,7 @@ h3 {
 }
 
 .text-shadow {
-    text-shadow: 0 0 1px #fff;
+    text-shadow: 0 0 3px #ffff;
 }
 
 .box-shadow {
@@ -298,7 +298,6 @@ nav > .menu-large > ul > li > a:active {
        min-width: 100%;
        margin: 0;
        padding: 0;
-       background-color: brown;
        position: relative;
    }
 
@@ -439,7 +438,7 @@ button a {
 
 
 
-#about {  
+#about, #project {  
     height: auto;
     position: relative;
     min-width: 100%;
@@ -452,7 +451,7 @@ button a {
     align-items: center;
 }
 
-#about > .about-header {
+#about > .about-header, #project > .project-header {
     display: flex;
     max-height: auto;
     min-width: 100%;
@@ -462,14 +461,14 @@ button a {
     flex-direction: column;
     transition: 0.5s ease;
 }
-#about .about-header > * {
+#about .about-header > *, #project > .project-header > * {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
 }
 
-#about .about-header > h2 {
+#about .about-header > h2, #project > .project-header > h2 {
     font-size: 2.75rem;
     letter-spacing: 0.085rem;
     word-spacing: 0.2rem;
@@ -486,7 +485,7 @@ button a {
     border-radius: 1rem;
     box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
 }
-#about .about-header > p {
+#about .about-header > p, #project > .project-header > p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     font-weight: 500;
@@ -494,12 +493,12 @@ button a {
     text-shadow: 0px 0px 1px #fff;
 }
 
-#about > .about-header > h2, #about .about-header > p {
+#about > .about-header > h2, #about .about-header > p, #project > .project-header > h2, #project > .project-header >p {
     width: min(50rem,85%);
     text-align: center;
 }
 
-#about > .about-content {
+#about > .about-content, #project > .project-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -507,26 +506,26 @@ button a {
     padding-right: 0;
 }
 
-#about > .about-content > * {
+#about > .about-content > *, #project > .project-content > * {
     display: flex;
     flex-direction: column;
     width: min(45rem,45%);
     height :auto;
 }
-/************************************* ABOUT LEFT *********************************/
+/*************************************  ABOUT LEFT & PROJECT-RIGHT  *********************************/
 
-#about > .about-content > .about-left {
+#about > .about-content > .about-left, #project > .project-content > .project-right {
     height: auto;
     display: flex;
 }
 
-#about > .about-content > .about-left > h3 {
+#about > .about-content > .about-left > h3, #project > .project-content > .project-right > h3 {
     display: inline-block;
     font-size: 2rem;
     margin: 0;
     padding: 0 0 2rem 0;
 }
-#about > .about-content > .about-left > p {
+#about > .about-content > .about-left > p, #project > .project-content > .project-right > p {
     display: inline-block;
     font-size: 1.2rem;
     color: #333;
@@ -543,7 +542,7 @@ button a {
     color: var(--blue-link);
     text-decoration: 2px solid underline;
 }
-#about > .about-content > .about-left > button {
+#about > .about-content > .about-left > button, #project > .project-content > .project-right > button {
     margin-left: 0;
     margin-right: auto;
     padding: 0;
@@ -553,10 +552,10 @@ button a {
     transition: 0.3s ease;
 }
 
-#about > .about-content > .about-left > button:hover {
+#about > .about-content > .about-left > button:hover, #project > .project-content > .project-right > button:hover{
     transform: translate(0px, -2px) scale(1.02);
 }
-#about > .about-content > .about-left > button:active {
+#about > .about-content > .about-left > button:active, #project > .project-content > .project-right > button:active {
     transform: scale(1);
 }
 .contactButton {
@@ -568,9 +567,9 @@ button a {
     margin: 0;
 }
 
-/**************************************** ABOUT RIGHT ***********************************/
+/**************************************** ABOUT RIGHT & PROJECT LEFT ***********************************/
 
-#about > .about-content > .about-right  {
+#about > .about-content > .about-right,  #project > .project-content > .project-left {
     /* background-color: blue;  */
     display: flex;
     height: auto;
@@ -618,7 +617,7 @@ button a {
         min-height: auto;
     }
     
-    #about > .about-header {
+    #about > .about-header, #project > .project-header {
         display: flex;
         max-height: auto;
         min-width: 100%;
@@ -628,14 +627,14 @@ button a {
         flex-direction: column;
     }
 
-    #about .about-header > * {
+    #about .about-header > *, #project > .project-header > * {
         display: inline-block;
         margin-left: auto;
         margin-right: auto;
         padding: 0;
     }
     
-    #about .about-header > h2 {
+    #about .about-header > h2, #project > .project-header > h2 {
         font-size: 2.75rem;
         letter-spacing: 0.085rem;
         word-spacing: 0.2rem;
@@ -652,7 +651,7 @@ button a {
         border-radius: 1rem;
         box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
     }
-    #about .about-header > p {
+    #about .about-header > p, #project > .project-header > p {
         font-size: 1.5rem;
         margin-bottom: 2rem;
         font-weight: 500;
@@ -660,12 +659,12 @@ button a {
         text-shadow: 0px 0px 1px #fff;
     }
     
-    #about > .about-header > h2, #about .about-header > p {
+    #about > .about-header > h2, #about .about-header > p, #project > .project-header > h2, #project > .project-header > p {
         width: min(50rem,85%);
         text-align: center;
     }
     
-    #about > .about-content {
+    #about > .about-content, #project > .project-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -673,36 +672,36 @@ button a {
         padding-right: 0;
     }
     
-    #about > .about-content > * {
+    #about > .about-content > *, #project > .project-content > * {
         display: flex;
         flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
         height :auto;
     }
-    #about > .about-content > .about-left {
+    #about > .about-content > .about-left, #about > .about-content > .about-right  {
         width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         margin-left: 5%;
         margin-right: 5%;
     }
-    #about > .about-content > .about-right  {
-        width: min(50rem,99%); /* SAME THEN LEFT TO KEEP RESPONSIVE */
+    #project > .project-content > .project-left , #project > .project-content > .project-right   {
+        width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         margin-left: 5%;
         margin-right: 5%;
     }
 
     /************************************* ABOUT LEFT *********************************/
     
-    #about > .about-content > .about-left {
+    #about > .about-content > .about-left, #project > .project-content > .project-right  {
         height: auto;
         display: flex;
     }
     
-    #about > .about-content > .about-left > h3 {
+    #about > .about-content > .about-left > h3, #project > .project-content > .project-right > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding: 0 0 2rem 0;
     }
-    #about > .about-content > .about-left > p {
+    #about > .about-content > .about-left > p, #project > .project-content > .project-right > p {
         display: inline-block;
         font-size: 1.2rem;
         color: #333;
@@ -719,7 +718,7 @@ button a {
         color: var(--blue-link);
         text-decoration: 2px solid underline;
     }
-    #about > .about-content > .about-left > button > .contactButton{
+    #about > .about-content > .about-left > button > .contactButton, #project > .project-content > .project-right > button > .caseStudyButton {
         padding-left: 3rem;
         padding-right: 3rem;
     }
@@ -779,10 +778,7 @@ button a {
 
 /* ========================== SECTION PROJECT ========================= */
 
-main > section:nth-child(3) {
-    background-color: burlywood;
-}
-main > section:nth-child(3) > * { /* all the child of... */
+main > #project > * { /* all the child of... */
     display: flex;
 }
 
@@ -906,7 +902,7 @@ footer {
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-        #about > .about-header {
+        #about > .about-header, #project > .project-header {
         padding-top: 8rem;
     }
 }
@@ -964,7 +960,7 @@ footer {
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-        #about > .about-header {
+        #about > .about-header, #project > .project-header {
         padding-top: 7.5rem;
     }
 }
@@ -1021,7 +1017,7 @@ footer {
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-    #about > .about-header {
+    #about > .about-header, #project > .project-header {
     padding-top: 7rem;
     }
 }
