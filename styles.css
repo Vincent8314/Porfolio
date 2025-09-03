@@ -1022,3 +1022,24 @@ footer {
     }
 }
 
+#project > .project-content > .project-left > .iframe-section {
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), /* white overlay */
+    url("./images/laptop-free-background.png");
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    max-height: 100vh;
+}
+
+#project > .project-content > .project-left > .iframe-section > .iframe-display {
+    position: absolute;
+    top: 10%;
+} 
