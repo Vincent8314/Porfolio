@@ -9,6 +9,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #fff;
     position: relative;
     font-family: "Source Sans 3", sans-serif;
     font-weight: <weight>;
@@ -22,7 +23,6 @@ li {
 }
 
 h1, h2, h3, ul, li, a, p {
-
     margin: 0;
     padding: 0;
 }
@@ -35,36 +35,32 @@ a {
     color: inherit;
     cursor: pointer;
 }
-
 strong {
     font-weight: inherit;
     font-size: inherit;
 }
-
 h3 {
     color:#222;
 }
-
 .text-shadow {
     text-shadow: 0 0 3px #ffff;
 }
-
 .box-shadow {
     text-shadow: 0 0 3px #ffff;
 }
-
 
 /* ==========================================================================
    COLOR : ROOT
    ========================================================================== */
 :root {
-    --text-grey-black: #222;
-    --text-white: rgba(230,230,230, 1);
-    --purple:rgba(120, 70, 233, 1);
-    --primary-white: #fafafaf8;
-    --primary-white-no-filter: #fafafaff;
-    --blue-link: #0000ffc0;
-    --blue-link-0: #4444ffc0;
+    --text-grey-black: rgba(34, 34, 34, 1);
+    --text-white: rgba(230, 230, 230, 1);
+    --purple: rgba(120, 70, 233, 1);
+    --primary-white: rgba(250, 250, 250, 0.97);
+    --primary-white-no-filter: rgba(250, 250, 250, 1);
+    --text-white-grey-blue: rgba(238, 238, 255, 1);
+    --blue-link: rgba(0, 0, 255, 0.75);
+    --blue-link-0: rgba(68, 68, 255, 0.75);
 }
 /* ==========================================================================
    HEADER SECTION
@@ -330,7 +326,7 @@ main {
 }
 
 .svg {
-    background-color: var(--text-grey-black);
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
 }
 
 .svg > a {
@@ -356,7 +352,8 @@ main {
     display: inline-block;
     min-width: 3rem;
     min-height: 3rem;
-    filter: invert(70%) sepia(76%) saturate(10000%) hue-rotate(220deg) brightness(70%) contrast(80%);
+    /* filter: invert(70%) sepia(76%) saturate(10000%) hue-rotate(220deg) brightness(70%) contrast(80%); */
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(251deg) brightness(104%) contrast(97%);
 }
 
 .home-paragraph {
@@ -802,18 +799,6 @@ main > section:nth-child(4) > * { /* all the child of... */
 }
 
 /* ==========================================================================
-   FOOTER SECTION
-   ========================================================================== */
-
-footer {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    min-height: 6rem;
-    background-color: pink;
-}
-
-/* ==========================================================================
    JAVASCRIPT ACTIVE STATES
    ========================================================================== */
 
@@ -1061,82 +1046,94 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-items: center;
-    min-height: 30vh;
+    min-height: auto;
     min-width: 100%;
     position: relative;
     margin: 0;
     padding: 0 2rem;
-    background-color: blueviolet;
+    background-color: rgb(56, 0, 109);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-footer > .footer-top-1 {
+footer > .footer-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: red;
-    min-height: 20vh;
-    align-items: center;
+    min-height: 15vh;
     width: min(80rem,100%) ;
+    min-height: 18vh;
 }
-footer > .footer-top-1 > .footer-top-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: peru;
-    min-height: 10vh;
-    align-items: center;
-    width: min(80rem,100%) ;
-}
+
 footer > .footer-bottom {
     display: flex;
-    background-color: yellow;
-    min-height: 10vh;
+    min-height: 5vh;
     align-items: center;
     justify-content: center;
     width: min(80rem,100%) ;
-    border-top: 2px solid #fff;
+    border-top: 1px solid #aaf;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.125rem;
+    min-height: 7vh;
 }
-footer > .footer-top-1 > .footer-top-2 > .footer-top-left {
-    display: flex;
-    width: min(30rem, 70%);
+footer > .footer-top > .footer-top-left {
+    width: min(30rem, 60%);
     flex-direction: column;
     justify-content: center;
     min-height: auto;
-    background-color: #cbabff;
+    /* background-color: #cbabff; */
 }
-footer > .footer-top-1 > .footer-top-2 > .footer-top-left h2{
-    display: block;
-    padding-bottom:0.5rem ;
-    margin: 0;
-    background-color: green;
-}
-footer > .footer-top-1 > .footer-top-2 > .footer-top-left p{
-    display: block;
-    padding-top:0.5rem ;
-    margin: 0;
-    background-color: white;
+footer > .footer-top > .footer-top-left > *, footer > .footer-top > .footer-top-right > *, .footer-bottom > div > *{
+   color: var(--text-white-grey-blue);
 }
 
-footer > .footer-top-1 > .footer-top-right {
+footer > .footer-top > .footer-top-left h2 {
+    padding-bottom: 0.5rem;
+    margin: 0;
+    /* background-color: green; */
+}
+footer > .footer-top > .footer-top-left p {
+    padding-top:0.5rem ;
+    margin: 0;
+    /* background-color: white; */
+}
+
+footer > .footer-top > .footer-top-right {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
-    min-height: 20vh;
-    min-width: 30%;
-    background-color: blue;
 }
-footer > .footer-top-1 > .footer-top-right > span {
+footer > .footer-top > .footer-top-right > span {
     display: inline-block;
-    position: absolute;
-    background-color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    padding: 0;
+    padding-left: 0.55rem;
+    margin-top: -0.5rem;
 }
-footer > .footer-top-1 > .footer-top-right > div {
+footer > .footer-top > .footer-top-right > div {
     display: inline-block;
-    flex-direction: row;
-    min-height: 2rem;
-    min-width: 5rem;
+    min-height: 1rem;
+    width: 100%;
+    padding-top: 0.5rem;
+    margin: 0;
+}
+footer > .footer-top > .footer-top-right > div > a {
+    display: inline-block;
+    color: var(--text-white-grey-blue);
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+footer > .footer-top > .footer-top-right > div > a > img {
+    display: inline-block;
+    filter: brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(1567%) hue-rotate(202deg) brightness(103%) contrast(101%);
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    padding: 0; 
+    margin: 0.25rem;
 }
