@@ -114,6 +114,7 @@ header {
     font-size: 1.4rem;
     letter-spacing: 0.02rem;
     color: rgba(120, 70, 233, 1);
+    /* color: var(--text-grey-black); */
     text-shadow: 1px 1px 1px rgba(120, 70, 233, 0.1);
     margin: auto 0; /* keep text center and aline with logo-name and img */
 }
@@ -348,13 +349,69 @@ main {
     padding: 0;
 }
 
-.svg > a > img {
+.svg > a > .icon-git {
     display: inline-block;
+    background-image: url('./images/svg.color/svg-before/github-before.svg');
     min-width: 3rem;
     min-height: 3rem;
-    /* filter: invert(70%) sepia(76%) saturate(10000%) hue-rotate(220deg) brightness(70%) contrast(80%); */
-    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(251deg) brightness(104%) contrast(97%);
+    transition: 0.2s ease;
 }
+.svg > a > .icon-youtube {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-before/youtube-before.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transition: 0.2s ease;
+}
+.svg > a > .icon-indeed {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-before/indeed-before.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transition: 0.2s ease;
+    }
+.svg > a > .icon-git:hover {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-hover/github-hover.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(1.05);
+}
+.svg > a > .icon-youtube:hover {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-hover/youtube-hover.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(1.05);
+}
+.svg > a > .icon-indeed:hover {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-hover/indeed-hover.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(1.05);
+    }
+.svg > a > .icon-git:active {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-active/github-active.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(0.99);
+}
+.svg > a > .icon-youtube:active {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-active/youtube-active.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(0.99);
+}
+.svg > a > .icon-indeed:active {
+    display: inline-block;
+    background-image: url('./images/svg.color/svg-active/indeed-active.svg');
+    min-width: 3rem;
+    min-height: 3rem;
+    transform: scale(0.99);
+    }
 
 .home-paragraph {
     display: flex;
@@ -474,7 +531,7 @@ button a {
     text-shadow: 0px 0px 1px #fff;
 }
 
-#about .about-divider {
+#about .about-divider, #project .project-divider {
     display: block;
     width: 5rem;
     height: 0.3rem;
@@ -1071,32 +1128,36 @@ footer > .footer-bottom {
     align-items: center;
     justify-content: center;
     width: min(80rem,100%) ;
-    border-top: 1px solid #aaf;
+    border-top: 1px solid var(--text-white-grey-blue);
     padding: 0;
     margin: 0;
     margin-bottom: 0.125rem;
     min-height: 7vh;
+}
+footer > .footer-bottom > div > p {
+    font-size: 0.8rem;
 }
 footer > .footer-top > .footer-top-left {
     width: min(30rem, 60%);
     flex-direction: column;
     justify-content: center;
     min-height: auto;
-    /* background-color: #cbabff; */
 }
 footer > .footer-top > .footer-top-left > *, footer > .footer-top > .footer-top-right > *, .footer-bottom > div > *{
    color: var(--text-white-grey-blue);
 }
 
 footer > .footer-top > .footer-top-left h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
     margin: 0;
-    /* background-color: green; */
 }
 footer > .footer-top > .footer-top-left p {
     padding-top:0.5rem ;
+    font-size: 1rem;
+    word-spacing: 0.02rem;
     margin: 0;
-    /* background-color: white; */
 }
 
 footer > .footer-top > .footer-top-right {
@@ -1107,7 +1168,7 @@ footer > .footer-top > .footer-top-right {
 }
 footer > .footer-top > .footer-top-right > span {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1rem;
     font-weight: 600;
     padding: 0;
@@ -1124,16 +1185,16 @@ footer > .footer-top > .footer-top-right > div {
 footer > .footer-top > .footer-top-right > div > a {
     display: inline-block;
     color: var(--text-white-grey-blue);
-    min-height: 1.5rem;
-    min-width: 1.5rem;
+    min-height: 1.8rem; /* change also img to keep the area clicable entierely */
+    min-width: 1.8rem;
     margin: 0;
     padding: 0;
 }
 footer > .footer-top > .footer-top-right > div > a > img {
     display: inline-block;
     filter: brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(1567%) hue-rotate(202deg) brightness(103%) contrast(101%);
-    min-height: 1.5rem;
-    min-width: 1.5rem;
+    min-height: 1.8rem;
+    min-width: 1.8rem;
     padding: 0; 
     margin: 0.25rem;
 }
