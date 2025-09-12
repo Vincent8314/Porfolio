@@ -62,6 +62,7 @@ h3 {
     --text-white-grey-blue: rgba(238, 238, 255, 1);
     --blue-link: rgba(0, 0, 255, 0.75);
     --blue-link-0: rgba(68, 68, 255, 0.75);
+    --pink-purple-withe: #cbabff;
 }
 /* ==========================================================================
    HEADER SECTION
@@ -499,7 +500,8 @@ button a {
 
 
 
-#about, #project {
+#about, #project, #contact {
+    display: flex;
     height: auto;
     position: relative;
     min-width: 100%;
@@ -1085,22 +1087,9 @@ main > section:nth-child(4) > * { /* all the child of... */
 
 /***********************************   CONTACT  ********************************/
 
-#contact {
+#contact { /*  Background & layout for #contact With #home, #project at top of styles.css   */
     display: flex;
-    min-height: 100vh;
-    min-width: 100%;
     flex-direction: column;
-
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), /* white overlay */
-    url("./images/purp-background-2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    justify-content: start; /* redondant just there as a reminder */
-    align-items: center;
 }
 
 #contact > form {
@@ -1109,27 +1098,24 @@ main > section:nth-child(4) > * { /* all the child of... */
     flex-direction: column;
     width: min(60rem,90%);
     border-radius: 0.5rem;
-    background-color: blue;
+    background-color: var(--pink-purple-withe);
     margin-bottom: 4rem;
+    box-shadow: 0 0 5px var(--primary-white);
 }
 #contact > form > label > p {
     display: block;
     min-width: 100%;
     margin-bottom: 0.5rem;
 }
-#contact > form > label > input {
+#contact > form > label > input, textarea {
     display: block;
     min-width: 100%;
     padding: 1rem;
     margin-bottom: 0.5rem;
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-white);
+    border-radius: 0.25rem;
 }
-#contact > form > label > textarea {
-    display: block;
-    min-width: 100%;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-}
-
 
 
 
