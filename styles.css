@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -248,7 +249,7 @@ nav > .menu-large > ul > li > a:active {
     margin: 0;
     padding: 0.7rem;
     border-bottom: 1px solid rgba(120, 70, 233, 1);
-    
+
 }
 /* Hamburger Menu */
 .ham-menu {
@@ -289,9 +290,9 @@ nav > .menu-large > ul > li > a:active {
    MAIN CONTENT SECTION
    ========================================================================== */
 
-   
+
    /* ========================== SECTION HOME ========================= */
-   
+
 #home {
     display: flex;
     min-height: 100vh;
@@ -309,7 +310,7 @@ nav > .menu-large > ul > li > a:active {
 main {
        position: relative;
 }
-    
+
 #home > .svg { /* svg social media */
     display: flex;
     align-items: center;
@@ -356,6 +357,10 @@ main {
     min-height: 3rem;
     transition: 0.2s ease;
 }
+
+/* svg > .hover > path {
+    fill: #222;
+} */
 .svg > a > .icon-youtube {
     display: inline-block;
     background-image: url('./images/svg.color/svg-before/youtube-before.svg');
@@ -391,13 +396,13 @@ main {
     min-height: 3rem;
     transform: scale(1.05);
     }
-.svg > a > .icon-git:active {
+/* .svg > a > .icon-git:active {
     display: inline-block;
     background-image: url('./images/svg.color/svg-active/github-active.svg');
     min-width: 3rem;
     min-height: 3rem;
     transform: scale(0.99);
-}
+} */
 .svg > a > .icon-youtube:active {
     display: inline-block;
     background-image: url('./images/svg.color/svg-active/youtube-active.svg');
@@ -494,7 +499,7 @@ button a {
 
 
 
-#about, #project {  
+#about, #project {
     height: auto;
     position: relative;
     min-width: 100%;
@@ -507,31 +512,30 @@ button a {
     align-items: center;
 }
 
-#about > .about-header, #project > .project-header {
+#about > .about-header, #project > .project-header, #contact > .contact-header {
     display: flex;
     max-height: auto;
     min-width: 100%;
     position: relative;
-    padding-top: 9rem;
+    padding-top: 8rem;
     top: 0;
     flex-direction: column;
     transition: 0.5s ease;
 }
-#about .about-header > *, #project > .project-header > * {
-    display: inline-block;
+#about .about-header > *, #project > .project-header > *, #contact > .contact-header > *{
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
+    padding: 0; 
 }
 
-#about .about-header > h2, #project > .project-header > h2 {
+#about .about-header > h2, #project > .project-header > h2, #contact > .contact-header > h2 {
     font-size: 2.75rem;
     letter-spacing: 0.085rem;
     word-spacing: 0.2rem;
     text-shadow: 0px 0px 1px #fff;
 }
 
-#about .about-divider, #project .project-divider {
+#about .about-divider, #project .project-divider, #contact .contact-divider {
     display: block;
     width: 5rem;
     height: 0.3rem;
@@ -541,7 +545,7 @@ button a {
     border-radius: 1rem;
     box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
 }
-#about .about-header > p, #project > .project-header > p {
+#about .about-header > p, #project > .project-header > p, #contact .contact-header > p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     font-weight: 500;
@@ -671,15 +675,15 @@ button a {
     font-size: 1.2rem;
 }
 
-@media (max-width: 996px) {    
-    #about {  
+@media (max-width: 996px) {
+    #about {
         color:var(--purple);
         height: auto;
         position: relative;
         min-width: 100%;
         min-height: auto;
     }
-    
+
     #about > .about-header, #project > .project-header {
         display: flex;
         max-height: auto;
@@ -696,14 +700,14 @@ button a {
         margin-right: auto;
         padding: 0;
     }
-    
+
     #about .about-header > h2, #project > .project-header > h2 {
         font-size: 2.75rem;
         letter-spacing: 0.085rem;
         word-spacing: 0.2rem;
         text-shadow: 0px 0px 1px #fff;
     }
-    
+
     #about .about-divider {
         display: block;
         width: 5rem;
@@ -721,12 +725,12 @@ button a {
         padding-bottom: 2%;
         text-shadow: 0px 0px 1px #fff;
     }
-    
+
     #about > .about-header > h2, #about .about-header > p, #project > .project-header > h2, #project > .project-header > p {
         width: min(50rem,85%);
         text-align: center;
     }
-    
+
     #about > .about-content, #project > .project-content {
         display: flex;
         flex-direction: column;
@@ -734,7 +738,7 @@ button a {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     #about > .about-content > *, #project > .project-content > * {
         display: flex;
         flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
@@ -752,12 +756,12 @@ button a {
     }
 
     /************************************* ABOUT LEFT *********************************/
-    
+
     #about > .about-content > .about-left, #project > .project-content > .project-right  {
         height: auto;
         display: flex;
     }
-    
+
     #about > .about-content > .about-left > h3, #project > .project-content > .project-right > h3 {
         display: inline-block;
         font-size: 2rem;
@@ -799,20 +803,20 @@ button a {
         font-weight: 600;
         margin: 0;
     }
-    
+
     /**************************************** ABOUT RIGHT ***********************************/
-    
+
     #about > .about-content > .about-right  {
         /* find rules just above .about-left */
     }
-    
+
     #about > .about-content > .about-right > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding:0 0 1.5rem 0;
     }
-    
+
     #about > .about-content > .about-right > .skills {
         display: flex;
         flex-direction: row;
@@ -820,7 +824,7 @@ button a {
         padding: 0;
         margin: 0;
     }
-    
+
     .skills-item {
         display: inline-block;
         flex-direction: row;
@@ -830,7 +834,7 @@ button a {
         margin: 0 1.15rem 1.15rem 0;
         border-radius: 0.25rem;
     }
-    
+
     .skills-item > P {
         font-weight: 600;
         font-size: 1.2rem;
@@ -881,7 +885,7 @@ main > section:nth-child(4) > * { /* all the child of... */
 /* ==========================================================================
    MEDIA QUERIES - RESPONSIVE DESIGN
    ========================================================================== */
-   
+
    /* Desktop - Large Screens */
    @media (min-width: 768px) {
        .ham-menu {
@@ -894,7 +898,7 @@ main > section:nth-child(4) > * { /* all the child of... */
             display: flex;
         }
     }
-    
+
     /* Mobile - Small Screens */
     @media (max-width: 768px) {
         .ham-menu {
@@ -917,7 +921,7 @@ main > section:nth-child(4) > * { /* all the child of... */
     }
     header {
         min-height: 7.85rem; /* fit with @queries .offscreen-menu */
-        max-height: 7.85rem; 
+        max-height: 7.85rem;
         background-color: var(--primary-white-no-filter);
     }
     #home>.svg {
@@ -940,7 +944,7 @@ main > section:nth-child(4) > * { /* all the child of... */
         padding: 0;
         margin: 1rem;
     }
-    
+
     .home-paragraph button {
         max-width: 50%;
         text-align: center;
@@ -998,7 +1002,7 @@ main > section:nth-child(4) > * { /* all the child of... */
         padding: 0;
         margin: 1rem;
     }
-    
+
     .home-paragraph button {
         max-width: 50%;
         text-align: center;
@@ -1033,7 +1037,7 @@ main > section:nth-child(4) > * { /* all the child of... */
     }
     header {
         min-height: 7.1rem; /* 0.1rem biger then .offscreen-menu to hide the border bottom and keep design border-top of the first child li above */
-        max-height: 7.1rem; 
+        max-height: 7.1rem;
     }
     #home>.svg {
     display: none;
@@ -1053,7 +1057,7 @@ main > section:nth-child(4) > * { /* all the child of... */
         letter-spacing: 0.04rem;
         text-align: center;
         padding: 0;
-        margin: 1rem; 
+        margin: 1rem;
     }
 
     .home-paragraph button {
@@ -1085,6 +1089,8 @@ main > section:nth-child(4) > * { /* all the child of... */
     display: flex;
     min-height: 100vh;
     min-width: 100%;
+    flex-direction: column;
+
     margin: 0;
     padding: 0;
     position: relative;
@@ -1093,9 +1099,39 @@ main > section:nth-child(4) > * { /* all the child of... */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    justify-content: start; /* redondant just there as a reminder */
     align-items: center;
-    justify-content: center;
 }
+
+#contact > form {
+    display: flex;
+    padding: min(3rem,5%); /* wow it's working :) */
+    flex-direction: column;
+    width: min(60rem,90%);
+    border-radius: 0.5rem;
+    background-color: blue;
+    margin-bottom: 4rem;
+}
+#contact > form > label > p {
+    display: block;
+    min-width: 100%;
+    margin-bottom: 0.5rem;
+}
+#contact > form > label > input {
+    display: block;
+    min-width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+#contact > form > label > textarea {
+    display: block;
+    min-width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
 
 /************************************  FOOTER  ******************************/
 
@@ -1195,6 +1231,6 @@ footer > .footer-top > .footer-top-right > div > a > img {
     filter: brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(1567%) hue-rotate(202deg) brightness(103%) contrast(101%);
     min-height: 1.8rem;
     min-width: 1.8rem;
-    padding: 0; 
+    padding: 0;
     margin: 0.25rem;
 }
