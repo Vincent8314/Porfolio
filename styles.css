@@ -524,6 +524,7 @@ button a {
     flex-direction: column;
     transition: 0.5s ease;
 }
+
 #about .about-header > *, #project > .project-header > *, #contact > .contact-header > *{
     margin-left: auto;
     margin-right: auto;
@@ -568,10 +569,16 @@ button a {
     padding-right: 0;
 }
 
-#about > .about-content > *  {
+#about > .about-content > .about-left  {
     display: flex;
     flex-direction: column;
-    width: min(45rem,45%);
+    width: min(45rem,50%);
+    height :auto;
+}
+#about > .about-content > .about-right  {
+    display: flex;
+    flex-direction: column;
+    width: min(35rem,37%);
     height :auto;
 }
 #project > .project-content > * {
@@ -686,15 +693,17 @@ button a {
         min-height: auto;
     }
 
-    #about > .about-header, #project > .project-header {
-        display: flex;
-        max-height: auto;
-        min-width: 100%;
-        position: relative;
-        padding-top: 8rem; /* % TO 8REM */
-        top: 0;
-        flex-direction: column;
-    }
+    #about > .about-header, #project > .project-header, #contact > .contact-header {
+    display: flex;
+    max-height: auto;
+    min-width: 100%;
+    position: relative;
+    padding-top: 8rem; 
+    top: 0;
+    flex-direction: column;
+    transition: 0.5s ease;
+
+}
 
     #about .about-header > *, #project > .project-header > * {
         display: inline-block;
@@ -741,14 +750,19 @@ button a {
         flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
         height :auto;
     }
-    #about > .about-content > .about-left, #about > .about-content > .about-right  {
-        width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-        margin-left: 5%;
-        margin-right: 5%;
+    #about > .about-content > .about-left {
+        width: min(45rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
+        padding-left: min(2rem,5%);
+        padding-right: 5%;
+    }
+    #about > .about-content > .about-right  {
+        width: min(35rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
+        padding-left: min(2rem,5%);
+        padding-right: 5%;
     }
     #project > .project-content > .project-left , #project > .project-content > .project-right   {
         width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-        margin-left: 5%;
+        padding-left: 5%;
         margin-right: 5%;
     }
 
@@ -770,7 +784,7 @@ button a {
         font-size: 1.2rem;
         color: #333;
         margin: 0;
-        padding: 0 9% 0 0;
+        padding: 0;
     }
     #about > .about-content > .about-left > p > .strong {
         font-weight: 700;
@@ -954,9 +968,6 @@ main > section:nth-child(4) > * { /* all the child of... */
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-        #about > .about-header, #project > .project-header {
-        padding-top: 8rem;
-    }
 }
 
 @media (max-width: 670px) {
@@ -1012,9 +1023,6 @@ main > section:nth-child(4) > * { /* all the child of... */
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-        #about > .about-header, #project > .project-header {
-        padding-top: 7.5rem;
-    }
 }
 /*  */
 @media (max-width: 576px) {
@@ -1068,9 +1076,6 @@ main > section:nth-child(4) > * { /* all the child of... */
         border-radius: 0.35rem;
         border: 1px solid #6668;
         transition: 0.2s ease;
-    }
-    #about > .about-header, #project > .project-header {
-    padding-top: 7rem;
     }
 }
 
