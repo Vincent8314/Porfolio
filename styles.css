@@ -351,73 +351,27 @@ main {
     padding: 0;
 }
 
-.svg > a > .icon-git {
+.svg > a > .svg-style {
     display: inline-block;
-    background-image: url('./images/svg.color/svg-before/github-before.svg');
+    fill:#7846e9;
     min-width: 3rem;
     min-height: 3rem;
     transition: 0.2s ease;
 }
-
-/* svg > .hover > path {
-    fill: #222;
-} */
-.svg > a > .icon-youtube {
+.svg > a > .svg-style:hover {
     display: inline-block;
-    background-image: url('./images/svg.color/svg-before/youtube-before.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transition: 0.2s ease;
-}
-.svg > a > .icon-indeed {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-before/indeed-before.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transition: 0.2s ease;
-    }
-.svg > a > .icon-git:hover {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-hover/github-hover.svg');
+    fill: #6420ff;
     min-width: 3rem;
     min-height: 3rem;
     transform: scale(1.05);
 }
-.svg > a > .icon-youtube:hover {
+.svg > a > .svg-style:active {
     display: inline-block;
-    background-image: url('./images/svg.color/svg-hover/youtube-hover.svg');
+    fill: #5020ff;
     min-width: 3rem;
     min-height: 3rem;
-    transform: scale(1.05);
+    transform: scale(1.0);
 }
-.svg > a > .icon-indeed:hover {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-hover/indeed-hover.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transform: scale(1.05);
-    }
-/* .svg > a > .icon-git:active {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-active/github-active.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transform: scale(0.99);
-} */
-.svg > a > .icon-youtube:active {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-active/youtube-active.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transform: scale(0.99);
-}
-.svg > a > .icon-indeed:active {
-    display: inline-block;
-    background-image: url('./images/svg.color/svg-active/indeed-active.svg');
-    min-width: 3rem;
-    min-height: 3rem;
-    transform: scale(0.99);
-    }
 
 .home-paragraph {
     display: flex;
