@@ -1049,6 +1049,7 @@ main > section:nth-child(4) > * { /* all the child of... */
 #contact > form {
     display: flex;
     padding: min(3rem,5%); /* wow it's working :) */
+    padding-bottom: 0;
     flex-direction: column;
     width: min(60rem,90%);
     border-radius: 0.5rem;
@@ -1078,25 +1079,29 @@ main > section:nth-child(4) > * { /* all the child of... */
     box-shadow: 0 0 2px #eeddff;
 }
 
+textarea {
+    margin-bottom: 0;
+}
+
 input:focus, textarea:focus {
     outline: none;
     caret-color: var(--purple);
 }
 input::placeholder, textarea::placeholder {
     color: #99c;
-    /* color: #ffff; */
 }
 input:focus::placeholder, textarea:focus::placeholder {
     color: #ffff;
-    /* color: #99c; */
 }
 #contact button {
     font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
+    margin: 4% auto 4% auto;
     cursor: pointer;
     transition: 0.2s ease;
     background-color:#7846e9dd;
     box-shadow: 0 0 1px 1px #5020ff;
+    box-sizing: content-box;
 }
 #contact button:hover {
     transform: scale(1.03);
@@ -1105,6 +1110,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 #contact button:active {
     transform: scale(1.0);
 }
+/* .contact-header */
 
 /************************************  FOOTER  ******************************/
 
