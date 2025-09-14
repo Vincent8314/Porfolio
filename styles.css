@@ -1102,6 +1102,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     background-color:#7846e9dd;
     box-shadow: 0 0 1px 1px #5020ff;
     box-sizing: content-box;
+    width: fit-content;
 }
 #contact button:hover {
     transform: scale(1.03);
