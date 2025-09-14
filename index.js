@@ -43,3 +43,13 @@ allLinks.forEach(link => {
         }
     });
 });
+
+document.querySelectorAll('#contact input, #contact textarea').forEach(field => {
+    field.addEventListener('focus', () => {
+        field.parentNode.querySelector('p').style.color = 'var(--purple)';
+    });
+    
+    field.addEventListener('blur', () => {
+        field.parentNode.querySelector('p').style.color = '#446';
+    });
+});

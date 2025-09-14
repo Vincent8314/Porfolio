@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1041,7 +1040,8 @@ main > section:nth-child(4) > * { /* all the child of... */
 
 /***********************************   CONTACT  ********************************/
 
-#contact { /*  Background & layout for #contact With #home, #project at top of styles.css   */
+#contact { /*  Background & layout for #contact With #home, #project at top of styles.css  RESET BACKGROUND COLOR ONLY NEXT LINE */
+    background: linear-gradient(180deg,  rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.90) 15%, rgba(188, 152, 255, 0.85) 30%, rgba(188, 152, 255, 0.8) 100%); 
     display: flex;
     flex-direction: column;
 }
@@ -1052,27 +1052,30 @@ main > section:nth-child(4) > * { /* all the child of... */
     flex-direction: column;
     width: min(60rem,90%);
     border-radius: 0.5rem;
-    background-color: rgb(240,240,255);
+    background-color: #fff; 
     margin-bottom: 4rem;
-    box-shadow: 0 0 2 blue;
+    box-shadow: 0 0 2px var(--purple);
 }
 #contact > form > label > p {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #333;
+    color: var(--purple);
+    color:#446;
 }
 #contact > form > label > input, textarea {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.025rem;
     display: block;
     min-width: 100%;
     padding: 0.75rem;
     margin-bottom: 0.5rem;
-    background-color: var(--primary-white);
-    border: 1px solid var(--primary-white);
-    color: #555;
+    background-color: #ddccff;
+    border: 1px solid #ccbbff;
+    color: #446;
     border-radius: 0.25rem;
     text-decoration: none;
-    box-shadow: 0 0 2px #99f;
+    box-shadow: 0 0 2px #eeddff;
 }
 
 input:focus, textarea:focus {
@@ -1081,12 +1084,27 @@ input:focus, textarea:focus {
 }
 input::placeholder, textarea::placeholder {
     color: #99c;
+    /* color: #ffff; */
 }
 input:focus::placeholder, textarea:focus::placeholder {
     color: #ffff;
+    /* color: #99c; */
 }
-
-
+#contact button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background-color:#7846e9dd;
+    box-shadow: 0 0 1px 1px #5020ff;
+}
+#contact button:hover {
+    transform: scale(1.03);
+    background-color: #6420ffdd;
+}
+#contact button:active {
+    transform: scale(1.0);
+}
 
 /************************************  FOOTER  ******************************/
 
