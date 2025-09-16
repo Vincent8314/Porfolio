@@ -374,7 +374,6 @@ main {
 
 .home-paragraph {
     display: flex;
-    position:relative;
     flex-direction: column;
     min-width: 100%;
     max-height: 100vh;
