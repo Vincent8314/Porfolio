@@ -180,7 +180,7 @@ nav > .menu-large > ul > li > a:active {
     width: 100%;
     max-width: 768px;
     min-height: 10rem;
-    right: -768px;
+    right: -850px; /* initialy -768px but arround to 850px to avoid issue with horizontal loyout display on smarphone */
     flex-direction: column;
     justify-content: center;
     align-items: center;
