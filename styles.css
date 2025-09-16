@@ -1219,7 +1219,7 @@ footer > .footer-top > .footer-top-right > div > a > img {
 .mousse-animation {
     display: flex; 
     position: absolute; /* parent".home-paragraph" is relative */
-    bottom: 8%;
+    bottom: 6%;
     background-color: var(--pink-purple-withe); 
     min-height: 3.5rem; 
     min-width:2.2rem; 
