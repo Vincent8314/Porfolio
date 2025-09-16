@@ -522,6 +522,7 @@ button a {
     padding-right: 0;
 }
 
+
 #about > .about-content > .about-left  {
     display: flex;
     flex-direction: column;
@@ -803,7 +804,17 @@ button a {
         font-weight: 600;
         font-size: 1.2rem;
     }
-
+    #about > .about-content, #project > .project-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    #project > .project-content > * {
+        display: flex;
+        flex-direction: column;
+        height :auto;
+        min-width: 100%;
+    }
 }
 
 
@@ -921,6 +932,14 @@ main > section:nth-child(4) > * { /* all the child of... */
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
+    #project > .project-content > .project-left {
+    min-width: 100%; /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 0 auto;
+    padding: min(1rem,3%);
+}
 }
 
 @media (max-width: 670px) {
@@ -1032,9 +1051,16 @@ main > section:nth-child(4) > * { /* all the child of... */
     }
 }
 
+.project-content > .project-left > .laptop-img {
+    position: relative;
+    padding: 0;
+}
 .project-content > .project-left > .laptop-img > img {
     display: inline-flex;
     max-width: 100%;
+    position: relative;
+    padding: 1%;
+    left: -0.5%;
 }
 
 
