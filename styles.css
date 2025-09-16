@@ -13,7 +13,6 @@ body {
     background-color: #fff;
     position: relative;
     font-family: "Source Sans 3", sans-serif;
-    font-weight: <weight>;
     font-style: normal;
     font-optical-sizing: auto; /* check how to works this line */
     font-size: 1rem;
@@ -1216,6 +1215,8 @@ footer > .footer-top > .footer-top-right > div > a > img {
     margin: 0.25rem;
 }
 
+/*******************************  Mousse Animation  ****************************/
+
 .mousse-animation {
     display: flex; 
     position: absolute; /* parent".home-paragraph" is relative */
@@ -1224,10 +1225,11 @@ footer > .footer-top > .footer-top-right > div > a > img {
     min-height: 3.5rem; 
     min-width:2.2rem; 
     border-radius: 2rem; 
-    border: 0.2rem solid var(--purple); 
-    box-shadow: 0 0 1px  #0008;
+    border: 0.15rem solid var(--purple); 
+    background: linear-gradient(180deg, rgba(203, 171, 255, 1)0%,rgba(203, 171, 255, 1)35%, rgba(203,171, 255, 1)35%,rgba(180, 120, 233, 1)50%,rgba(120, 70, 233, 1)100%);
+    box-shadow: 1px 1px 3px 0 rgba(120, 70, 233, 0.3);
     text-align: center; 
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0;
     justify-content: center;
 }
@@ -1236,9 +1238,9 @@ footer > .footer-top > .footer-top-right > div > a > img {
         bottom: 4%;
     }
 }
-/*  */
+
 .mousse-animation-dot {
-    animation: moveDot 1s linear infinite;
+    animation: moveDot 1.5s linear infinite;
     position: absolute;
     color: var(--purple);
 }
@@ -1248,7 +1250,8 @@ footer > .footer-top > .footer-top-right > div > a > img {
     opacity: 1;  
 }
 to {
-    transform: translateY(100%);
-    opacity: 0.3;  
+    transform: translateY(140%);
+    opacity: 0.1;  
 }
 }
+/* remember as my first artistic creation from scratch 16.09.2025 */
