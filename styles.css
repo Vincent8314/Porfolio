@@ -26,9 +26,11 @@ h1, h2, h3, ul, li, a, p, div, footer, span, header, button {
     margin: 0;
     padding: 0;
 }
+
 p {
     display: inline-block;
 }
+
 a {
     display: inline-block;
     text-decoration: none;
@@ -251,7 +253,7 @@ nav > .menu-large > ul > li > a:active {
     border-bottom: 1px solid rgba(120, 70, 233, 1);
 
 }
-/* Hamburger Menu */
+/***************************** Hamburger Menu ****************************/
 .ham-menu {
     height: 50px;
     width: 50px;
@@ -287,11 +289,106 @@ nav > .menu-large > ul > li > a:active {
 }
 
 /* ==========================================================================
-   MAIN CONTENT SECTION
-   ========================================================================== */
+JAVASCRIPT ACTIVE STATES
+========================================================================== */
 
+.off-screen-menu.active {
+    right: 0;
+}
 
-   /* ========================== SECTION HOME ========================= */
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: blue;
+}
+
+.ham-menu.active span:nth-child(2) {
+    display: none;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* =========================================================================
+    MAIN CONTENT 
+========================================================================== */
+
+main {
+    position: relative;
+}
+
+#about, #project, #contact {
+    display: flex;
+    height: auto;
+    position: relative;
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg,  rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+.div-header {
+    display: flex;
+    max-height: auto;
+    min-width: 100%;
+    position: relative;
+    padding-top: 8rem;
+    top: 0;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.div-header > * {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.div-header > h2 {
+    font-size: 2.75rem;
+    letter-spacing: 0.085rem;
+    word-spacing: 0.2rem;
+    text-shadow: 0px 0px 1px #fff;
+}
+
+.contact-header > h2 {
+    font-size: 2.75rem;
+    letter-spacing: 0.085rem;
+    word-spacing: 0.2rem;
+    text-shadow: 0px 0px 1px #fff;
+}
+
+.divider {
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: var(--blue-link);
+    margin: 1rem auto 1.25rem; 
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
+}
+
+.div-header > p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    padding-bottom: 2%;
+    text-shadow: 0px 0px 1px #fff;
+}
+
+.div-header > h2, .div-header > p  {
+    width: min(50rem,85%);
+    text-align: center;
+}
+
+/* ===================== SECTION HOME ===================== */
 
 #home {
     display: flex;
@@ -307,9 +404,6 @@ nav > .menu-large > ul > li > a:active {
     background-position: center;
 }
 
-main {
-       position: relative;
-}
 
 #home > .svg { /* svg social media */
     display: flex;
@@ -406,115 +500,53 @@ main {
     word-spacing: -0.2rem;
 }
 
-button {
-    max-width: 50%;
-    max-height: min-content;
-    text-align: center;
-    font-weight: 500;
-    margin: 4rem auto;
+/*******************************  Mousse Animation  ****************************/
+
+.mousse-animation {
+    display: flex; 
+    position: absolute; /* parent".home-paragraph" is relative */
+    bottom: 5%;
+    background-color: var(--pink-purple-withe); 
+    min-height: 3.5rem; 
+    min-width:2.2rem; 
+    border-radius: 2rem; 
+    border: 0.15rem solid var(--purple); 
+    background: linear-gradient(180deg, rgba(203, 171, 255, 1)0%,rgba(203, 171, 255, 1)35%, rgba(203,171, 255, 1)35%,rgba(180, 120, 233, 1)50%,rgba(120, 70, 233, 1)100%);
+    box-shadow: 1px 1px 3px 0 rgba(120, 70, 233, 0.3);
+    text-align: center; 
+    font-size: 1.2rem;
     padding: 0;
-    color: var(--primary-white);
-    background-color: rgba(120, 70, 233, 1);
-    border-radius: 0.35rem;
-    border: 1px solid #6668;
-    transition: 0.2s ease;
+    justify-content: center;
+    pointer-events: none;
 }
 
-button a {
-    padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
-    display: inline-block;
-    font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-    text-shadow: 1px 1px #ffffff33;
-    width: 100%;
-}
-.home-paragraph button {
-    margin: 4rem auto;
-    padding: 0;
+.mousse-animation-dot {
+    animation: moveDot 1.5s linear infinite;
+    position: absolute;
+    color: var(--purple);
 }
 
-.home-paragraph button a {
-    padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
+@keyframes moveDot {
+  from {
+    transform: translateY(0);
+    opacity: 1;  
 }
 
-.home-paragraph button:hover {
-    transform: scale(1.03);
+to {
+    transform: translateY(140%);
+    opacity: 0.1;  
 }
-.home-paragraph button:active {
-    transform: scale(0.99);
-}
-.home-paragraph button {
-    transform: scale(1.02);
 }
 
-
-
-/* ========================== SECTION ABOUT ========================= */
-
-
-
-#about, #project, #contact {
-    display: flex;
-    height: auto;
-    position: relative;
-    min-width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg,  rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
+@media (max-width: 668px) {
+    .mousse-animation {
+        bottom: 4%;
+    }
 }
 
-#about > .about-header, #project > .project-header, #contact > .contact-header {
-    display: flex;
-    max-height: auto;
-    min-width: 100%;
-    position: relative;
-    padding-top: 8rem;
-    top: 0;
-    flex-direction: column;
-    transition: 0.5s ease;
-}
+/* ====================== SECTION ABOUT ====================== */
 
-#about .about-header > *, #project > .project-header > *, #contact > .contact-header > *{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-}
-
-#about .about-header > h2, #project > .project-header > h2, #contact > .contact-header > h2 {
-    font-size: 2.75rem;
-    letter-spacing: 0.085rem;
-    word-spacing: 0.2rem;
-    text-shadow: 0px 0px 1px #fff;
-}
-
-#about .about-divider, #project .project-divider, #contact .contact-divider {
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: var(--blue-link);
-    margin: 1rem auto 1.25rem; /* top(1)-----left&nbsp;rigth(2)-----bottom(3) */
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
-}
-#about .about-header > p, #project > .project-header > p, #contact .contact-header > p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    padding-bottom: 2%;
-    text-shadow: 0px 0px 1px #fff;
-}
-
-#about > .about-header > h2, #about .about-header > p, #project > .project-header > h2, #project > .project-header >p, #contact > .contact-header > h2, #contact > .contact-header >p {
-    width: min(50rem,85%);
-    text-align: center;
-}
-
-#about > .about-content, #project > .project-content {
+.about-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -522,57 +554,94 @@ button a {
     padding-right: 0;
 }
 
+/****************** ABOUT LEFT *******************/
 
-#about > .about-content > .about-left  {
+.about-left  {
     display: flex;
     flex-direction: column;
     width: min(45rem,50%);
     height :auto;
 }
-#about > .about-content > .about-right  {
-    display: flex;
-    flex-direction: column;
-    width: min(35rem,37%);
-    height :auto;
-}
-#project > .project-content > * {
-    display: flex;
-    flex-direction: column;
-    width: min(45rem,45%);
-    height :auto;
-}
 
-/*************************************  ABOUT LEFT & PROJECT-RIGHT  *********************************/
-
-#about > .about-content > .about-left, #project > .project-content > .project-right {
+.about-left {
     height: auto;
     display: flex;
 }
 
-#about > .about-content > .about-left > h3, #project > .project-content > .project-right > h3 {
+.about-left > h3 {
     display: inline-block;
     font-size: 2rem;
     margin: 0;
     padding: 0 0 2rem 0;
 }
-#about > .about-content > .about-left > p, #project > .project-content > .project-right > p {
+
+.about-left > p {
     display: inline-block;
     font-size: 1.2rem;
     color: #333;
     margin: 0;
     padding: 0 9% 0 0;
 }
-#about > .about-content > .about-left > p > .strong {
+
+.about-left > p > .strong {
     font-weight: 700;
 }
-#about > .about-content > .about-left > p > a > .strongLink {
+
+.about-left > p > a > .strongLink {
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 0.04rem;
     color: var(--blue-link);
     text-decoration: 2px solid underline;
 }
-#about > .about-content > .about-left > button, #project > .project-content > .project-right > button {
+
+.about-left > button {
+    margin-left: 0;
+    margin-right: auto;
+    padding: 0;
+    margin: 2rem auto 4rem 0;
+    background-color: var(--purple);
+    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
+    transition: 0.3s ease;
+}
+.about-left > button:hover {
+    transform: translate(0px, -2px) scale(1.02);
+}
+
+.about-left > button:active {
+    transform: scale(1);
+}
+
+/*************************** ABOUT RIGHT **************************/
+
+.about-right  {
+    display: flex;
+    flex-direction: column;
+    width: min(35rem,37%);
+    height :auto;
+}
+
+.project-right {
+    height: auto;
+    display: flex;
+}
+
+.project-right > h3 {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0 2rem 1rem;
+}
+
+.project-right > p {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    padding: 0 9% 0 1rem;
+}
+
+.project-right > button {
     margin-left: 0;
     margin-right: auto;
     padding: 0;
@@ -582,32 +651,21 @@ button a {
     transition: 0.3s ease;
 }
 
-#about > .about-content > .about-left > button:hover, #project > .project-content > .project-right > button:hover{
+.project-right > button:hover{
     transform: translate(0px, -2px) scale(1.02);
 }
-#about > .about-content > .about-left > button:active, #project > .project-content > .project-right > button:active {
+
+.project-right > button:active {
     transform: scale(1);
 }
-.contactButton {
-    padding:0.7rem 1.4rem;
-    font-family: "Source Sans 3", sans-serif;
-    text-shadow: none;
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-}
 
-/**************************************** ABOUT RIGHT & PROJECT LEFT ***********************************/
-
-#about > .about-content > .about-right,  #project > .project-content > .project-left {
-    /* background-color: blue;  */
+.about-right {
     display: flex;
     height: auto;
     margin: 0;
     padding: 0 0 2rem 0;
 }
-
-#about > .about-content > .about-right > h3 {
+.about-right > h3 {
     display: inline-block;
     font-size: 2rem;
     margin: 0;
@@ -615,7 +673,7 @@ button a {
     text-shadow: 0 0 3px #ffff;
 }
 
-#about > .about-content > .about-right > .skills {
+.about-right > .skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -638,6 +696,93 @@ button a {
     font-size: 1.2rem;
 }
 
+/* ========================== SECTION PROJECT ========================== */
+
+button {
+    max-width: 50%;
+    max-height: min-content;
+    text-align: center;
+    font-weight: 500;
+    margin: 4rem auto;
+    padding: 0;
+    color: var(--primary-white);
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    transition: 0.2s ease;
+}
+
+button a {
+    padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
+    display: inline-block;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px #ffffff33;
+    width: 100%;
+}
+
+.home-paragraph button {
+    margin: 4rem auto;
+    padding: 0;
+}
+
+.home-paragraph button a {
+    padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
+}
+
+.home-paragraph button:hover {
+    transform: scale(1.03);
+}
+
+.home-paragraph button:active {
+    transform: scale(0.99);
+}
+
+.home-paragraph button {
+    transform: scale(1.02);
+}
+
+
+
+/* ========================== SECTION ABOUT ========================= */
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.project-content > * {
+    display: flex;
+    flex-direction: column;
+    width: min(45rem,45%);
+    height :auto;
+}
+
+/*************************************  ABOUT LEFT & PROJECT-RIGHT  *********************************/
+
+
+.contactButton {
+    padding:0.7rem 1.4rem;
+    font-family: "Source Sans 3", sans-serif;
+    text-shadow: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/**************************************** ABOUT RIGHT & PROJECT LEFT ***********************************/
+
+
+.project-left {
+    display: flex;
+    height: auto;
+    margin: 0;
+    padding: 0 0 2rem 0;
+}
+
 @media (max-width: 996px) {
     #about {
         color:var(--purple);
@@ -647,26 +792,61 @@ button a {
         min-height: auto;
     }
 
-    #about > .about-header, #project > .project-header, #contact > .contact-header {
-    display: flex;
-    max-height: auto;
-    min-width: 100%;
-    position: relative;
-    padding-top: 8rem;
-    top: 0;
-    flex-direction: column;
-    transition: 0.5s ease;
+    .about-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
+
+}
+    .project-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
+
+}
+    .contact-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
 
 }
 
-    #about .about-header > *, #project > .project-header > * {
+    #about .about-header > * {
         display: inline-block;
         margin-left: auto;
         margin-right: auto;
         padding: 0;
     }
 
-    #about .about-header > h2, #project > .project-header > h2 {
+    #project > .project-header > * {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    #about .about-header > h2 {
+        font-size: 2.75rem;
+        letter-spacing: 0.085rem;
+        word-spacing: 0.2rem;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    #project > .project-header > h2 {
         font-size: 2.75rem;
         letter-spacing: 0.085rem;
         word-spacing: 0.2rem;
@@ -683,7 +863,15 @@ button a {
         border-radius: 1rem;
         box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
     }
-    #about .about-header > p, #project > .project-header > p {
+
+    #about .about-header > p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        padding-bottom: 2%;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    #project > .project-header > p {
         font-size: 1.5rem;
         margin-bottom: 2rem;
         font-weight: 500;
@@ -691,7 +879,14 @@ button a {
         text-shadow: 0px 0px 1px #fff;
     }
 
-    #about > .about-content, #project > .project-content {
+    #about > .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #project > .project-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -699,21 +894,30 @@ button a {
         padding-right: 0;
     }
 
-    #about > .about-content > *, #project > .project-content > * {
+    #about > .about-content > * {
         display: flex;
         flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
         height :auto;
     }
+
+    #project > .project-content > * {
+        display: flex;
+        flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
+        height :auto;
+    }
+
     #about > .about-content > .about-left {
         width: min(45rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: min(2rem,5%);
         padding-right: 5%;
     }
+
     #about > .about-content > .about-right  {
         width: min(35rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: min(2rem,5%);
         padding-right: 5%;
     }
+
     #project > .project-content > .project-left , #project > .project-content > .project-right   {
         width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: 5%;
@@ -722,44 +926,68 @@ button a {
 
     /************************************* ABOUT LEFT *********************************/
 
-    #about > .about-content > .about-left, #project > .project-content > .project-right  {
+    #about > .about-content > .about-left  {
+        height: auto;
+        display: flex;
+    }
+    #project > .project-content > .project-right  {
         height: auto;
         display: flex;
     }
 
-    #about > .about-content > .about-left > h3, #project > .project-content > .project-right > h3 {
+    #about > .about-content > .about-left > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding: 0 0 2rem 0;
     }
-    #about > .about-content > .about-left > p, #project > .project-content > .project-right > p {
+    #project > .project-content > .project-right > h3 {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 2rem 0;
+    }
+
+    #about > .about-content > .about-left > p {
         display: inline-block;
         font-size: 1.2rem;
         color: #333;
         margin: 0;
         padding: 0;
     }
-    #about > .about-content > .about-left > p > .strong {
+    #project > .project-content > .project-right > p {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about-left > p > .strong {
         font-weight: 700;
     }
-    #about > .about-content > .about-left > p > a > .strongLink {
+
+    .about-left > p > a > .strongLink {
         font-weight: 700;
         font-size: 1.2rem;
         letter-spacing: 0.04rem;
         color: var(--blue-link);
         text-decoration: 2px solid underline;
     }
-    #about > .about-content > .about-left > button > .contactButton, #project > .project-content > .project-right > button > .caseStudyButton {
+
+    .about-left > button > .contactButton {
         padding-left: 3rem;
         padding-right: 3rem;
     }
-    #about > .about-content > .about-left > button:hover {
+    
+    .about-left > button:hover {
         transform: translate(0px, -2px) scale(1.02);
     }
-    #about > .about-content > .about-left > button:active {
+
+    .about-left > button:active {
         transform: scale(1);
     }
+
     .contactButton {
         padding:0.7rem 1.4rem;
         font-family: "Source Sans 3", sans-serif;
@@ -771,18 +999,13 @@ button a {
 
     /**************************************** ABOUT RIGHT ***********************************/
 
-    #about > .about-content > .about-right  {
-        /* find rules just above .about-left */
-    }
-
-    #about > .about-content > .about-right > h3 {
+   .about-right > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding:0 0 1.5rem 0;
     }
-
-    #about > .about-content > .about-right > .skills {
+    .about-right > .skills {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -804,10 +1027,15 @@ button a {
         font-weight: 600;
         font-size: 1.2rem;
     }
-    #about > .about-content, #project > .project-content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    #about > .about-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #project > .project-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #project > .project-content > * {
         display: flex;
@@ -815,46 +1043,6 @@ button a {
         height :auto;
         min-width: 100%;
     }
-}
-
-
-/* ========================== SECTION PROJECT ========================= */
-
-main > #project > * { /* all the child of... */
-    display: flex;
-}
-
-/* ========================== SECTION CONTACT ========================= */
-
-main > section:nth-child(4) {
-    background-color: darkgreen;
-}
-
-main > section:nth-child(4) > * { /* all the child of... */
-    display: flex;
-}
-
-/* ==========================================================================
-   JAVASCRIPT ACTIVE STATES
-   ========================================================================== */
-
-.off-screen-menu.active {
-    right: 0;
-}
-
-.ham-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: blue;
-}
-
-.ham-menu.active span:nth-child(2) {
-    display: none;
-}
-
-.ham-menu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* ==========================================================================
@@ -883,25 +1071,31 @@ main > section:nth-child(4) > * { /* all the child of... */
         margin: auto 1.8rem auto auto; /* to push to the rigth and keep center into Header */
         padding-right: 1rem;
     }
+
     .off-screen-menu {
         display: flex;
         top: 7.75rem; /* fit with @queries header  */
         background-color: var(--primary-white-no-filter);
     }
+
     .menu-large {
         display: none;
     }
+
     .logo-name > img {
         margin: 0 0.9rem 0 1.75rem;
     }
+
     header {
         min-height: 7.85rem; /* fit with @queries .offscreen-menu */
         max-height: 7.85rem;
         background-color: var(--primary-white-no-filter);
     }
+
     #home>.svg {
         display: none;
     }
+
     .home-paragraph h1 {
       max-width: 50%;
       text-align: center;
@@ -910,6 +1104,7 @@ main > section:nth-child(4) > * { /* all the child of... */
       margin-top: 7rem;
       margin-bottom: 1rem;
     }
+
     .home-paragraph h2 {
         max-width: 70%;
         font-size: 1.9rem;
@@ -932,14 +1127,15 @@ main > section:nth-child(4) > * { /* all the child of... */
         border: 1px solid #6668;
         transition: 0.2s ease;
     }
-    #project > .project-content > .project-left {
-    min-width: 100%; /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-    display: flex;
-    height: auto;
-    justify-content: center;
-    margin: 0 auto;
-    padding: min(1rem,3%);
-}
+
+    .project-left {
+        min-width: 100%; /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
+        display: flex;
+        height: auto;
+        justify-content: center;
+        margin: 0 auto;
+        padding: min(1rem,3%);
+    }
 }
 
 @media (max-width: 670px) {
@@ -949,30 +1145,36 @@ main > section:nth-child(4) > * { /* all the child of... */
         margin: auto 1.6rem auto auto; /* to push to the rigth and keep center into Header */
         padding-right: 1rem;
     }
+
     .off-screen-menu {
         display: flex;
         top: 7.5rem; /* fit with @queries header  */
         background-color: var(--primary-white-no-filter);
     }
+
     .logo-name > img {
         margin: 0 0.8rem 0 1.5rem;
     }
+
     header {
         min-height: 7.6rem;
         max-height: 7.6rem;
         background-color: var(--primary-white-no-filter);
     }
+
     #home>.svg {
-    display: none;
+        display: none;
     }
+
     .home-paragraph h1 {
-    max-width: 70%;
-    text-align: center;
-    font-size: 3rem;
-    padding: 0;
-    margin-top: 6rem;
-    margin-bottom: 1rem;
+        max-width: 70%;
+        text-align: center;
+        font-size: 3rem;
+        padding: 0;
+        margin-top: 6rem;
+        margin-bottom: 1rem;
     }
+
     .home-paragraph h2 {
         max-width: 80%;
         font-size: 1.9rem;
@@ -1004,29 +1206,35 @@ main > section:nth-child(4) > * { /* all the child of... */
         margin: auto 1.4rem auto auto; /* to push to the rigth and keep center into Header */
         padding-right: 1rem;
     }
+
     .off-screen-menu {
         display: flex;
         top: 7rem; /* fit with @queries header  */
         background-color: var(--primary-white-no-filter);
     }
+
     .logo-name > img {
         margin: 0 0.7rem 0 1.25rem;
     }
+
     header {
         min-height: 7.1rem; /* 0.1rem biger then .offscreen-menu to hide the border bottom and keep design border-top of the first child li above */
         max-height: 7.1rem;
     }
+
     #home>.svg {
     display: none;
     }
+
     .home-paragraph h1 {
-    max-width: 98%;
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+        max-width: 98%;
+        text-align: center;
+        font-size: 2.5rem;
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
+
     .home-paragraph h2 {
         max-width: 80%;
         font-size: 1.8rem;
@@ -1051,11 +1259,12 @@ main > section:nth-child(4) > * { /* all the child of... */
     }
 }
 
-.project-content > .project-left > .laptop-img {
+.laptop-img {
     position: relative;
     padding: 0;
 }
-.project-content > .project-left > .laptop-img > img {
+
+.laptop-img > img {
     display: inline-flex;
     max-width: 100%;
     position: relative;
@@ -1083,12 +1292,14 @@ main > section:nth-child(4) > * { /* all the child of... */
     margin-bottom: 4rem;
     box-shadow: 0 0 2px var(--purple);
 }
+
 #contact > form > label > p {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--purple);
     color:#446;
 }
+
 #contact > form > label > input, textarea {
     font-size: 1.3rem;
     font-weight: 500;
@@ -1113,12 +1324,15 @@ input:focus, textarea:focus {
     outline: none;
     caret-color: var(--purple);
 }
+
 input::placeholder, textarea::placeholder {
     color: #99c;
 }
+
 input:focus::placeholder, textarea:focus::placeholder {
     color: #ffff;
 }
+
 #contact button {
     font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
@@ -1130,10 +1344,12 @@ input:focus::placeholder, textarea:focus::placeholder {
     box-sizing: content-box;
     width: fit-content;
 }
+
 #contact button:hover {
     transform: scale(1.03);
     background-color: #6420ffdd;
 }
+
 #contact button:active {
     transform: scale(1.0);
 }
@@ -1175,15 +1391,18 @@ footer > .footer-bottom {
     margin-bottom: 0.125rem;
     min-height: 7vh;
 }
+
 footer > .footer-bottom > div > p {
     font-size: 0.8rem;
 }
+
 footer > .footer-top > .footer-top-left {
     width: min(30rem, 60%);
     flex-direction: column;
     justify-content: center;
     min-height: auto;
 }
+
 footer > .footer-top > .footer-top-left > *, footer > .footer-top > .footer-top-right > *, .footer-bottom > div > *{
    color: rgb(248, 248, 248);
 }
@@ -1206,7 +1425,8 @@ footer > .footer-top > .footer-top-right {
     position: relative;
     flex-direction: column;
     justify-content: center;
-}
+}  
+
 footer > .footer-top > .footer-top-right > span {
     display: inline-block;
     font-size: 1.4rem;
@@ -1216,6 +1436,7 @@ footer > .footer-top > .footer-top-right > span {
     padding-left: 0.55rem;
     margin-top: -0.5rem;
 }
+
 footer > .footer-top > .footer-top-right > div {
     display: inline-block;
     min-height: 1rem;
@@ -1223,6 +1444,7 @@ footer > .footer-top > .footer-top-right > div {
     padding-top: 0.5rem;
     margin: 0;
 }
+
 footer > .footer-top > .footer-top-right > div > a {
     display: inline-block;
     color: var(--text-white-grey-blue);
@@ -1231,7 +1453,8 @@ footer > .footer-top > .footer-top-right > div > a {
     margin: 0;
     padding: 0;
 }
-footer > .footer-top > .footer-top-right > div > a > img {
+
+.footer-top-right > div > a > img {
     display: inline-block;
     filter: brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(1567%) hue-rotate(202deg) brightness(103%) contrast(101%);
     min-height: 1.8rem;
@@ -1240,43 +1463,4 @@ footer > .footer-top > .footer-top-right > div > a > img {
     margin: 0.25rem;
 }
 
-/*******************************  Mousse Animation  ****************************/
 
-.mousse-animation {
-    display: flex; 
-    position: absolute; /* parent".home-paragraph" is relative */
-    bottom: 5%;
-    background-color: var(--pink-purple-withe); 
-    min-height: 3.5rem; 
-    min-width:2.2rem; 
-    border-radius: 2rem; 
-    border: 0.15rem solid var(--purple); 
-    background: linear-gradient(180deg, rgba(203, 171, 255, 1)0%,rgba(203, 171, 255, 1)35%, rgba(203,171, 255, 1)35%,rgba(180, 120, 233, 1)50%,rgba(120, 70, 233, 1)100%);
-    box-shadow: 1px 1px 3px 0 rgba(120, 70, 233, 0.3);
-    text-align: center; 
-    font-size: 1.2rem;
-    padding: 0;
-    justify-content: center;
-}
-@media (max-width: 668px) {
-    .mousse-animation :{
-        bottom: 4%;
-    }
-}
-
-.mousse-animation-dot {
-    animation: moveDot 1.5s linear infinite;
-    position: absolute;
-    color: var(--purple);
-}
-@keyframes moveDot {
-  from {
-    transform: translateY(0);
-    opacity: 1;  
-}
-to {
-    transform: translateY(140%);
-    opacity: 0.1;  
-}
-}
-/* remember as my first artistic creation from scratch 16.09.2025 */
