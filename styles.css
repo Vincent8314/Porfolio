@@ -900,25 +900,25 @@ button a {
         height :auto;
     }
 
-    #project > .project-content > * {
+    .project-content > * {
         display: flex;
         flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
         height :auto;
     }
 
-    #about > .about-content > .about-left {
+    .about-left {
         width: min(45rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: min(2rem,5%);
         padding-right: 5%;
     }
 
-    #about > .about-content > .about-right  {
+    .about-right  {
         width: min(35rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: min(2rem,5%);
         padding-right: 5%;
     }
 
-    #project > .project-content > .project-left , #project > .project-content > .project-right   {
+    .project-left , .project-right   {
         width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
         padding-left: 5%;
         margin-right: 5%;
@@ -926,36 +926,36 @@ button a {
 
     /************************************* ABOUT LEFT *********************************/
 
-    #about > .about-content > .about-left  {
+    .about-left  {
         height: auto;
         display: flex;
     }
-    #project > .project-content > .project-right  {
+    .project-right  {
         height: auto;
         display: flex;
     }
 
-    #about > .about-content > .about-left > h3 {
+    .about-left > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding: 0 0 2rem 0;
     }
-    #project > .project-content > .project-right > h3 {
+    .project-right > h3 {
         display: inline-block;
         font-size: 2rem;
         margin: 0;
         padding: 0 0 2rem 0;
     }
 
-    #about > .about-content > .about-left > p {
+    .about-left > p {
         display: inline-block;
         font-size: 1.2rem;
         color: #333;
         margin: 0;
         padding: 0;
     }
-    #project > .project-content > .project-right > p {
+    .project-right > p {
         display: inline-block;
         font-size: 1.2rem;
         color: #333;
@@ -1049,25 +1049,26 @@ button a {
    MEDIA QUERIES - RESPONSIVE DESIGN
    ========================================================================== */
 
-   /* Desktop - Large Screens */
-   @media (min-width: 768px) {
-       .ham-menu {
-           display: none;
-        }
-        .off-screen-menu {
-            display: none;
-        }
-        .menu-large {
-            display: flex;
-        }
+/* Desktop - Large Screens */
+
+@media (min-width: 768px) {
+    .ham-menu {
+        display: none;
     }
+    .off-screen-menu {
+        display: none;
+    }
+    .menu-large {
+        display: flex;
+    }
+}
 
     /* Mobile - Small Screens */
-    @media (max-width: 768px) {
-        .ham-menu {
-            display: flex;
-            height: 48px;
-            width: 48px;
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+        height: 48px;
+        width: 48px;
         margin: auto 1.8rem auto auto; /* to push to the rigth and keep center into Header */
         padding-right: 1rem;
     }
@@ -1198,7 +1199,7 @@ button a {
         transition: 0.2s ease;
     }
 }
-/*  */
+
 @media (max-width: 576px) {
     .ham-menu {
         height: 42px;
@@ -1369,7 +1370,7 @@ footer {
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-footer > .footer-top {
+.footer-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1379,7 +1380,7 @@ footer > .footer-top {
     min-height: 18vh;
 }
 
-footer > .footer-bottom {
+.footer-bottom {
     display: flex;
     min-height: 5vh;
     align-items: center;
@@ -1392,42 +1393,42 @@ footer > .footer-bottom {
     min-height: 7vh;
 }
 
-footer > .footer-bottom > div > p {
+.footer-bottom > div > p {
     font-size: 0.8rem;
 }
 
-footer > .footer-top > .footer-top-left {
+.footer-top-left {
     width: min(30rem, 60%);
     flex-direction: column;
     justify-content: center;
     min-height: auto;
 }
 
-footer > .footer-top > .footer-top-left > *, footer > .footer-top > .footer-top-right > *, .footer-bottom > div > *{
+.footer-top-left > *, .footer-top-right > *, .footer-bottom > div > *{
    color: rgb(248, 248, 248);
 }
 
-footer > .footer-top > .footer-top-left h2 {
+.footer-top-left h2 {
     font-size: 1.4rem;
     letter-spacing: 0.05rem;
     padding-bottom: 0.5rem;
     margin: 0;
 }
-footer > .footer-top > .footer-top-left p {
+.footer-top-left p {
     padding-top:0.5rem ;
     font-size: 1rem;
     word-spacing: 0.02rem;
     margin: 0;
 }
 
-footer > .footer-top > .footer-top-right {
+.footer-top-right {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
 }  
 
-footer > .footer-top > .footer-top-right > span {
+.footer-top-right > span {
     display: inline-block;
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
@@ -1437,7 +1438,7 @@ footer > .footer-top > .footer-top-right > span {
     margin-top: -0.5rem;
 }
 
-footer > .footer-top > .footer-top-right > div {
+.footer-top-right > div {
     display: inline-block;
     min-height: 1rem;
     width: 100%;
@@ -1445,7 +1446,7 @@ footer > .footer-top > .footer-top-right > div {
     margin: 0;
 }
 
-footer > .footer-top > .footer-top-right > div > a {
+.footer-top-right > div > a {
     display: inline-block;
     color: var(--text-white-grey-blue);
     min-height: 1.8rem; /* change also img to keep the area clicable entierely */
