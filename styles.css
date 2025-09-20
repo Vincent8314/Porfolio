@@ -64,7 +64,7 @@ h3 {
     --text-white-grey-blue: rgba(238, 238, 255, 1);
     --blue-link: rgba(0, 0, 255, 0.75);
     --blue-link-0: rgba(68, 68, 255, 0.75);
-    --pink-purple-withe: #cbabff;
+    --pink-purple-withe: rgba(203, 171, 255,1); 
 }
 /* ==========================================================================
    HEADER SECTION
@@ -433,6 +433,7 @@ main {
 #home {
     display: flex;
     min-height: 100vh;
+    height: clamp(40rem, 100vh, 300%);
     min-width: 100%;
     margin: 0;
     padding: 0;
@@ -443,7 +444,6 @@ main {
     background-repeat: no-repeat;
     background-position: center;
 }
-
 
 #home > .svg { /* svg social media */
     display: flex;
