@@ -44,6 +44,23 @@ strong {
 h3 {
     color:#222;
 }
+
+button {
+    width: clamp(10rem, auto, 80%);
+    max-width: 50%;
+    min-width: 10rem;
+    max-height: min-content;
+    text-align: center;
+    font-weight: 500;
+    margin: 4rem auto;
+    padding: 0;
+    color: var(--primary-white);
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    transition: 0.2s ease;
+}
+
 .text-shadow {
     text-shadow: 0 0 3px #ffff;
 }
@@ -432,8 +449,7 @@ main {
 
 #home {
     display: flex;
-    min-height: 100vh;
-    height: clamp(40rem, 100vh, 300%);
+    height: clamp(40rem, 100vh, 100vh);
     min-width: 100%;
     margin: 0;
     padding: 0;
@@ -509,43 +525,58 @@ main {
 .home-paragraph {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    height: clamp(40rem, 100vh, 100vh); /* same then #home */
+}
+
+.home-paragraph-top {
+    display: flex;
+    padding: 8.5rem 5% 0 ;
+    position: relative;
+    flex-direction: column;
     min-width: 100%;
-    max-height: 100vh;
+    height: 80%;
+    align-content: space-between;
     align-items: center;
     justify-content: center;
 }
 
-.home-paragraph h1 {
+.home-paragraph-top h1 {
   max-width: 50%;
   text-align: center;
   font-size: 3.5rem;
   padding: 0;
-  margin: 7rem;
-  margin-bottom: 1rem;
+  margin: 0;
+  
 }
-.home-paragraph h2 {
+.home-paragraph-top > h2 {
     max-width: 70%;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.025rem;
     word-spacing: 0.05rem;
+    margin: 0 auto;
     text-align: center;
-    padding: 0;
-    margin: 1rem;
 }
 
-.home-paragraph h2 .UI-UX {
+.home-paragraph-top > h2 > span {
     font-size: inherit;
     font-weight: inherit;
     word-spacing: -0.2rem;
+}
+
+.home-paragraph-bottom {
+    display: flex;
+    min-height: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 /*******************************  Mousse Animation  ****************************/
 
 .mousse-animation {
     display: flex; 
-    position: absolute; /* parent".home-paragraph" is relative */
-    bottom: 5%;
     background-color: var(--pink-purple-withe); 
     min-height: 3.5rem; 
     min-width:2.2rem; 
@@ -581,6 +612,9 @@ to {
 @media (max-width: 668px) {
     .mousse-animation {
         bottom: 4%;
+    }
+    .home-paragraph-top > h2 {
+        min-width: 90%;
     }
 }
 
@@ -965,20 +999,6 @@ to {
     }
 }
 /* ========================== SECTION PROJECT ========================== */
-
-button {
-    max-width: 50%;
-    max-height: min-content;
-    text-align: center;
-    font-weight: 500;
-    margin: 4rem auto;
-    padding: 0;
-    color: var(--primary-white);
-    background-color: rgba(120, 70, 233, 1);
-    border-radius: 0.35rem;
-    border: 1px solid #6668;
-    transition: 0.2s ease;
-}
 
 button a {
     padding: 0.75rem 3rem; /* padding into the a to made all area button clicable */
