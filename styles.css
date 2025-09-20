@@ -54,6 +54,7 @@ h3 {
 /* ==========================================================================
    COLOR : ROOT
    ========================================================================== */
+   
 :root {
     --text-grey-black: rgba(34, 34, 34, 1);
     --text-white: rgba(230, 230, 230, 1);
@@ -93,7 +94,6 @@ header {
     min-width: 18rem;
     margin: 0;
     padding: 0;
-    /* background-color: #6f86ff; */ /* only activate on test */
 }
 
 .logo-name > img {
@@ -117,9 +117,8 @@ header {
     font-size: 1.4rem;
     letter-spacing: 0.02rem;
     color: rgba(120, 70, 233, 1);
-    /* color: var(--text-grey-black); */
     text-shadow: 1px 1px 1px rgba(120, 70, 233, 0.1);
-    margin: auto 0; /* keep text center and aline with logo-name and img */
+    margin: auto 0; 
 }
 
 /* ==========================================================================
@@ -134,7 +133,6 @@ nav {
 }
 
 nav > .menu-large {
-    /* display: flex;  */ /* already in @media keep in comment to keep responive */
     min-width: 100%;
     margin: 0;
     padding-right: 2.5rem;
@@ -176,7 +174,6 @@ nav > .menu-large > ul > li > a:active {
 
 /* Mobile Off-Screen Menu */
 .off-screen-menu {
-    /* display: flex; */ /* already in @media */
     position: absolute;
     top: 7rem;
     width: 100%;
@@ -311,8 +308,51 @@ JAVASCRIPT ACTIVE STATES
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+/********************** RESPONSIVE MENU ************************/
+
+@media (min-width: 768px) {
+    .ham-menu {
+        display: none;
+    }
+    .off-screen-menu {
+        display: none;
+    }
+    .menu-large {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+        height: 48px;
+        width: 48px;
+        margin: auto 1.8rem auto auto; /* to push to the rigth and keep center into Header */
+        padding-right: 1rem;
+    }
+
+    .off-screen-menu {
+        display: flex;
+        top: 7.75rem; /* fit with @queries header  */
+        background-color: var(--primary-white-no-filter);
+    }
+
+    .menu-large {
+        display: none;
+    }
+
+    .logo-name > img {
+        margin: 0 0.9rem 0 1.75rem;
+    }
+
+    header {
+        min-height: 7.85rem; /* fit with @queries .offscreen-menu */
+        max-height: 7.85rem;
+        background-color: var(--primary-white-no-filter);
+    }
+}
+
 /* =========================================================================
-    MAIN CONTENT 
+MAIN CONTENT 
 ========================================================================== */
 
 main {
@@ -696,6 +736,234 @@ to {
     font-size: 1.2rem;
 }
 
+@media (max-width: 996px) {
+    
+    /* ===== ABOUT SECTION ===== */
+    #about {
+        color: var(--purple);
+        height: auto;
+        position: relative;
+        min-width: 100%;
+        min-height: auto;
+    }
+    
+    /* ===== ABOUT HEADER ===== */
+    .about-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
+    }
+    
+    .about-header > * {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+    
+    .about-header > h2 {
+        font-size: 2.75rem;
+        letter-spacing: 0.085rem;
+        word-spacing: 0.2rem;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    .about-header > p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        padding-bottom: 2%;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    .about-divider {
+        display: block;
+        width: 5rem;
+        height: 0.3rem;
+        background-color: var(--blue-link);
+        margin: 1rem auto 1.25rem; /* top(1)-----left&right(2)-----bottom(3) */
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
+    }
+    
+    /* ===== ABOUT CONTENT CONTAINER ===== */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .about-content > * {
+        display: flex;
+        flex-direction: column; /* 996PX CHANGE ROW TO COLUMN */
+        height: auto;
+    }
+    
+    /* ===== ABOUT LEFT ===== */
+    .about-left {
+        width: min(45rem, 100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
+        height: auto;
+        display: flex;
+        padding-left: min(2rem, 5%);
+        padding-right: 5%;
+    }
+    
+    .about-left > h3 {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 2rem 0;
+    }
+    
+    .about-left > p {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .about-left > p > .strong {
+        font-weight: 700;
+    }
+    
+    .about-left > p > a > .strongLink {
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 0.04rem;
+        color: var(--blue-link);
+        text-decoration: 2px solid underline;
+    }
+    
+    .about-left > button > .contactButton {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    
+    .about-left > button:hover {
+        transform: translate(0px, -2px) scale(1.02);
+    }
+    
+    .about-left > button:active {
+        transform: scale(1);
+    }
+    
+    /* ===== ABOUT RIGHT ===== */
+    .about-right {
+        width: min(35rem, 100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
+        padding-left: min(2rem, 5%);
+        padding-right: 5%;
+    }
+    
+    .about-right > h3 {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 1.5rem 0;
+    }
+    
+    .about-right > .skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 996px) {
+    
+    /* ===== PROJECT HEADER ===== */
+    .project-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
+    }
+    
+    .project-header > * {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+    
+    .project-header > h2 {
+        font-size: 2.75rem;
+        letter-spacing: 0.085rem;
+        word-spacing: 0.2rem;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    .project-header > p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        padding-bottom: 2%;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    /* ===== PROJECT CONTENT CONTAINER ===== */
+    .project-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .project-content > * {
+        display: flex;
+        flex-direction: column; /* 996PX CHANGE ROW TO COLUMN */
+        height: auto;
+        min-width: 100%;
+    }
+    
+    /* ===== PROJECT LEFT ===== */
+    .project-left {
+        width: min(50rem, 99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
+        padding-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /* ===== PROJECT RIGHT ===== */
+    .project-right {
+        width: min(50rem, 99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
+        height: auto;
+        display: flex;
+        padding-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .project-right > h3 {
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 2rem 0;
+    }
+    
+    .project-right > p {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+}
 /* ========================== SECTION PROJECT ========================== */
 
 button {
@@ -784,36 +1052,7 @@ button a {
 }
 
 @media (max-width: 996px) {
-    #about {
-        color:var(--purple);
-        height: auto;
-        position: relative;
-        min-width: 100%;
-        min-height: auto;
-    }
 
-    .about-header {
-        display: flex;
-        max-height: auto;
-        min-width: 100%;
-        position: relative;
-        padding-top: 8rem;
-        top: 0;
-        flex-direction: column;
-        transition: 0.5s ease;
-
-}
-    .project-header {
-        display: flex;
-        max-height: auto;
-        min-width: 100%;
-        position: relative;
-        padding-top: 8rem;
-        top: 0;
-        flex-direction: column;
-        transition: 0.5s ease;
-
-}
     .contact-header {
         display: flex;
         max-height: auto;
@@ -825,169 +1064,7 @@ button a {
         transition: 0.5s ease;
 
 }
-
-    #about .about-header > * {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0;
-    }
-
-    #project > .project-header > * {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0;
-    }
-
-    #about .about-header > h2 {
-        font-size: 2.75rem;
-        letter-spacing: 0.085rem;
-        word-spacing: 0.2rem;
-        text-shadow: 0px 0px 1px #fff;
-    }
-    #project > .project-header > h2 {
-        font-size: 2.75rem;
-        letter-spacing: 0.085rem;
-        word-spacing: 0.2rem;
-        text-shadow: 0px 0px 1px #fff;
-    }
-
-    #about .about-divider {
-        display: block;
-        width: 5rem;
-        height: 0.3rem;
-        background-color: var(--blue-link);
-        margin: 1rem auto 1.25rem; /* top(1)-----left&nbsp;rigth(2)-----bottom(3) */
-        border: none;
-        border-radius: 1rem;
-        box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
-    }
-
-    #about .about-header > p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        font-weight: 500;
-        padding-bottom: 2%;
-        text-shadow: 0px 0px 1px #fff;
-    }
-    #project > .project-header > p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        font-weight: 500;
-        padding-bottom: 2%;
-        text-shadow: 0px 0px 1px #fff;
-    }
-
-    #about > .about-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #project > .project-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    #about > .about-content > * {
-        display: flex;
-        flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
-        height :auto;
-    }
-
-    .project-content > * {
-        display: flex;
-        flex-direction: column; /*996PX CHANGE ROW TO COLUMN*/
-        height :auto;
-    }
-
-    .about-left {
-        width: min(45rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-        padding-left: min(2rem,5%);
-        padding-right: 5%;
-    }
-
-    .about-right  {
-        width: min(35rem,100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-        padding-left: min(2rem,5%);
-        padding-right: 5%;
-    }
-
-    .project-left , .project-right   {
-        width: min(50rem,99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside*/
-        padding-left: 5%;
-        margin-right: 5%;
-    }
-
-    /************************************* ABOUT LEFT *********************************/
-
-    .about-left  {
-        height: auto;
-        display: flex;
-    }
-    .project-right  {
-        height: auto;
-        display: flex;
-    }
-
-    .about-left > h3 {
-        display: inline-block;
-        font-size: 2rem;
-        margin: 0;
-        padding: 0 0 2rem 0;
-    }
-    .project-right > h3 {
-        display: inline-block;
-        font-size: 2rem;
-        margin: 0;
-        padding: 0 0 2rem 0;
-    }
-
-    .about-left > p {
-        display: inline-block;
-        font-size: 1.2rem;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-    .project-right > p {
-        display: inline-block;
-        font-size: 1.2rem;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-
-    .about-left > p > .strong {
-        font-weight: 700;
-    }
-
-    .about-left > p > a > .strongLink {
-        font-weight: 700;
-        font-size: 1.2rem;
-        letter-spacing: 0.04rem;
-        color: var(--blue-link);
-        text-decoration: 2px solid underline;
-    }
-
-    .about-left > button > .contactButton {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-    
-    .about-left > button:hover {
-        transform: translate(0px, -2px) scale(1.02);
-    }
-
-    .about-left > button:active {
-        transform: scale(1);
-    }
-
+  
     .contactButton {
         padding:0.7rem 1.4rem;
         font-family: "Source Sans 3", sans-serif;
@@ -998,20 +1075,6 @@ button a {
     }
 
     /**************************************** ABOUT RIGHT ***********************************/
-
-   .about-right > h3 {
-        display: inline-block;
-        font-size: 2rem;
-        margin: 0;
-        padding:0 0 1.5rem 0;
-    }
-    .about-right > .skills {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0;
-        margin: 0;
-    }
 
     .skills-item {
         display: inline-block;
@@ -1027,22 +1090,7 @@ button a {
         font-weight: 600;
         font-size: 1.2rem;
     }
-    #about > .about-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #project > .project-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #project > .project-content > * {
-        display: flex;
-        flex-direction: column;
-        height :auto;
-        min-width: 100%;
-    }
+
 }
 
 /* ==========================================================================
@@ -1051,48 +1099,9 @@ button a {
 
 /* Desktop - Large Screens */
 
-@media (min-width: 768px) {
-    .ham-menu {
-        display: none;
-    }
-    .off-screen-menu {
-        display: none;
-    }
-    .menu-large {
-        display: flex;
-    }
-}
-
     /* Mobile - Small Screens */
 @media (max-width: 768px) {
-    .ham-menu {
-        display: flex;
-        height: 48px;
-        width: 48px;
-        margin: auto 1.8rem auto auto; /* to push to the rigth and keep center into Header */
-        padding-right: 1rem;
-    }
-
-    .off-screen-menu {
-        display: flex;
-        top: 7.75rem; /* fit with @queries header  */
-        background-color: var(--primary-white-no-filter);
-    }
-
-    .menu-large {
-        display: none;
-    }
-
-    .logo-name > img {
-        margin: 0 0.9rem 0 1.75rem;
-    }
-
-    header {
-        min-height: 7.85rem; /* fit with @queries .offscreen-menu */
-        max-height: 7.85rem;
-        background-color: var(--primary-white-no-filter);
-    }
-
+    
     #home>.svg {
         display: none;
     }
@@ -1404,7 +1413,7 @@ footer {
     min-height: auto;
 }
 
-.footer-top-left > *, .footer-top-right > *, .footer-bottom > div > *{
+.footer-top-left > *, .footer-top-right > *, .footer-bottom > div > * {
    color: rgb(248, 248, 248);
 }
 
