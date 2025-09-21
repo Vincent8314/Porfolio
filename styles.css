@@ -22,7 +22,7 @@ li {
     list-style-type: none;
 }
 
-h1, h2, h3, ul, li, a, p, div, footer, span, header, button {
+h1, h2, h3, ul, li, a, p, div, footer, span, header {
     margin: 0;
     padding: 0;
 }
@@ -45,7 +45,7 @@ h3 {
     color:#222;
 }
 
-button {
+/* button {
     width: clamp(10rem, auto, 80%);
     max-width: 50%;
     min-width: 10rem;
@@ -59,7 +59,7 @@ button {
     border-radius: 0.35rem;
     border: 1px solid #6668;
     transition: 0.2s ease;
-}
+} */
 
 .text-shadow {
     text-shadow: 0 0 3px #ffff;
@@ -376,7 +376,7 @@ main {
     position: relative;
 }
 
-#about, #project, #contact {
+#about, #contact {
     display: flex;
     height: auto;
     position: relative;
@@ -449,7 +449,7 @@ main {
 
 #home {
     display: flex;
-    height: clamp(40rem, 100vh, 100vh);
+    height: clamp(50rem, 100vh, 100vh);
     min-width: 100%;
     margin: 0;
     padding: 0;
@@ -459,6 +459,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 1;
 }
 
 #home > .svg { /* svg social media */
@@ -479,6 +480,7 @@ main {
 
 .svg {
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+    z-index: 3;
 }
 
 .svg > a {
@@ -526,7 +528,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: clamp(40rem, 100vh, 100vh); /* same then #home */
+    height: clamp(50rem, 100vh, 100vh); /* same then #home */
+    z-index: 2;
 }
 
 .home-paragraph-top {
@@ -637,11 +640,6 @@ to {
     height :auto;
 }
 
-.about-left {
-    height: auto;
-    display: flex;
-}
-
 .about-left > h3 {
     display: inline-block;
     font-size: 2rem;
@@ -672,12 +670,18 @@ to {
 .about-left > button {
     margin-left: 0;
     margin-right: auto;
+    min-width: 10rem;
     padding: 0;
+    font-weight: 500;
     margin: 2rem auto 4rem 0;
     background-color: var(--purple);
     box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
     transition: 0.3s ease;
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    color: var(--primary-white);
 }
+
 .about-left > button:hover {
     transform: translate(0px, -2px) scale(1.02);
 }
@@ -694,45 +698,6 @@ to {
     width: min(35rem,37%);
     height :auto;
 }
-
-.project-right {
-    height: auto;
-    display: flex;
-}
-
-.project-right > h3 {
-    display: inline-block;
-    font-size: 2rem;
-    margin: 0;
-    padding: 0 0 2rem 1rem;
-}
-
-.project-right > p {
-    display: inline-block;
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0;
-    padding: 0 9% 0 1rem;
-}
-
-.project-right > button {
-    margin-left: 0;
-    margin-right: auto;
-    padding: 0;
-    margin: 2rem auto 4rem 0;
-    background-color: var(--purple);
-    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
-    transition: 0.3s ease;
-}
-
-.project-right > button:hover{
-    transform: translate(0px, -2px) scale(1.02);
-}
-
-.project-right > button:active {
-    transform: scale(1);
-}
-
 .about-right {
     display: flex;
     height: auto;
@@ -768,6 +733,167 @@ to {
 .skills-item > P {
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+/******************************* project section *************************/
+    /* ===== PROJECT HEADER ===== */
+    #project {
+        display: flex;
+        height: auto;
+        position: relative;
+        min-width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg,  rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .project-header {
+        display: flex;
+        max-height: auto;
+        min-width: 100%;
+        position: relative;
+        padding-top: 8rem;
+        top: 0;
+        flex-direction: column;
+        transition: 0.5s ease;
+    }
+
+    @media (max-width: 996px) {
+        .project-header {
+            display: flex;
+        }
+    }
+    .project-header > * {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+    
+    .project-header > h2 {
+        font-size: 2.75rem;
+        letter-spacing: 0.085rem;
+        word-spacing: 0.2rem;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    .project-header > p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        padding-bottom: 2%;
+        text-shadow: 0px 0px 1px #fff;
+    }
+    
+    .project-content {
+        display: flex;
+        flex-direction: row;
+        min-width: 100%;
+        padding: 0 0 2.5rem 0;
+    }
+    @media (max-width: 996px) {
+        .project-content {
+            flex-direction: column;
+        }
+    }
+    /* ===== PROJECT LEFT ===== */
+    .project-left {
+        display: flex;
+        width: min(50rem, 99%); 
+        flex-direction: row-reverse;
+        width: 50%;
+        padding:0 0 0 2rem;
+    }
+    @media (max-width: 996px) {
+        .project-left {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            padding:0 2rem 1.5rem;          
+        }
+    }
+
+    .project-left > .laptop-img > img {
+        display: inline-flex;
+        width: 100%;
+        position: relative;
+        padding: 1%;
+        left: -0.5%;
+    }
+    
+    /* ===== PROJECT RIGHT ===== */
+
+    .project-right {
+        display: flex;
+        max-width:50%;
+        height: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        flex-direction: column;
+    }
+
+    @media (max-width: 996px) {
+        .project-right {
+            max-width: 100%;
+            justify-content: center;
+            align-content: space-between
+        }
+    }
+    .project-right > h3 {
+        display: block;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 2rem 0;
+    }
+
+    @media (max-width: 996px) {
+        .project-right > h3 {
+           text-align: center;
+        }
+    }
+    
+    .project-right > p {
+        display: block;
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+@media (max-width: 996px) {
+    .project-right > p {
+        display: block;
+        max-width: 100%;
+        text-align: center;
+        padding: 0 0 2.5rem 0;
+        }
+    }
+.project-right > button {
+    display: block;
+    max-width: 15rem;
+    margin: auto;
+    padding: 0;
+    background-color: var(--purple);
+    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
+    transition: 0.3s ease;
+    font-weight: 500;
+    padding: 0;
+    color: var(--primary-white);
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    transition: 0.2s ease;
+}
+
+.project-right > button:hover{
+    transform: translate(0px, -2px) scale(1.02);
+}
+
+.project-right > button:active {
+    transform: scale(1);
 }
 
 @media (max-width: 996px) {
@@ -830,18 +956,11 @@ to {
     .about-content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
         padding-left: 0;
         padding-right: 0;
     }
-    
-    .about-content > * {
-        display: flex;
-        flex-direction: column; /* 996PX CHANGE ROW TO COLUMN */
-        height: auto;
-    }
-    
+
     /* ===== ABOUT LEFT ===== */
     .about-left {
         width: min(45rem, 100%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
@@ -914,90 +1033,6 @@ to {
     }
 }
 
-@media (max-width: 996px) {
-    
-    /* ===== PROJECT HEADER ===== */
-    .project-header {
-        display: flex;
-        max-height: auto;
-        min-width: 100%;
-        position: relative;
-        padding-top: 8rem;
-        top: 0;
-        flex-direction: column;
-        transition: 0.5s ease;
-    }
-    
-    .project-header > * {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0;
-    }
-    
-    .project-header > h2 {
-        font-size: 2.75rem;
-        letter-spacing: 0.085rem;
-        word-spacing: 0.2rem;
-        text-shadow: 0px 0px 1px #fff;
-    }
-    
-    .project-header > p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        font-weight: 500;
-        padding-bottom: 2%;
-        text-shadow: 0px 0px 1px #fff;
-    }
-    
-    /* ===== PROJECT CONTENT CONTAINER ===== */
-    .project-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    .project-content > * {
-        display: flex;
-        flex-direction: column; /* 996PX CHANGE ROW TO COLUMN */
-        height: auto;
-        min-width: 100%;
-    }
-    
-    /* ===== PROJECT LEFT ===== */
-    .project-left {
-        width: min(50rem, 99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
-        padding-left: 5%;
-        margin-right: 5%;
-    }
-    
-    /* ===== PROJECT RIGHT ===== */
-    .project-right {
-        width: min(50rem, 99%); /* when using classic or min width, OVERFLOW, but when use min() at less than 50rem or... the 99% keeps the text inside */
-        height: auto;
-        display: flex;
-        padding-left: 5%;
-        margin-right: 5%;
-    }
-    
-    .project-right > h3 {
-        display: inline-block;
-        font-size: 2rem;
-        margin: 0;
-        padding: 0 0 2rem 0;
-    }
-    
-    .project-right > p {
-        display: inline-block;
-        font-size: 1.2rem;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-}
 /* ========================== SECTION PROJECT ========================== */
 
 button a {
@@ -1012,6 +1047,17 @@ button a {
 .home-paragraph button {
     margin: 4rem auto;
     padding: 0;
+    width: clamp(10rem, auto, 80%);
+    max-width: 50%;
+    min-width: 10rem;
+    max-height: min-content;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-white);
+    background-color: rgba(120, 70, 233, 1);
+    border-radius: 0.35rem;
+    border: 1px solid #6668;
+    transition: 0.2s ease;
 }
 
 .home-paragraph button a {
@@ -1019,38 +1065,16 @@ button a {
 }
 
 .home-paragraph button:hover {
-    transform: scale(1.03);
+    transform: translate(0px, -2px) scale(1.02);
 }
 
 .home-paragraph button:active {
-    transform: scale(0.99);
+    transform: scale(1);
 }
-
-.home-paragraph button {
-    transform: scale(1.02);
-}
-
-
 
 /* ========================== SECTION ABOUT ========================= */
 
-.project-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.project-content > * {
-    display: flex;
-    flex-direction: column;
-    width: min(45rem,45%);
-    height :auto;
-}
-
 /*************************************  ABOUT LEFT & PROJECT-RIGHT  *********************************/
-
 
 .contactButton {
     padding:0.7rem 1.4rem;
@@ -1062,14 +1086,6 @@ button a {
 }
 
 /**************************************** ABOUT RIGHT & PROJECT LEFT ***********************************/
-
-
-.project-left {
-    display: flex;
-    height: auto;
-    margin: 0;
-    padding: 0 0 2rem 0;
-}
 
 @media (max-width: 996px) {
 
@@ -1289,20 +1305,6 @@ button a {
     }
 }
 
-.laptop-img {
-    position: relative;
-    padding: 0;
-}
-
-.laptop-img > img {
-    display: inline-flex;
-    max-width: 100%;
-    position: relative;
-    padding: 1%;
-    left: -0.5%;
-}
-
-
 /***********************************   CONTACT  ********************************/
 
 #contact { /*  Background & layout for #contact With #home, #project at top of styles.css  RESET BACKGROUND COLOR ONLY NEXT LINE */
@@ -1365,19 +1367,24 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 #contact button {
     font-size: 1.5rem;
+    color: var(--primary-white);
+    font-weight: 500;
     padding: 0.5rem 1.5rem;
     margin: 1.5rem auto 1.5rem auto;
-    cursor: pointer;
     transition: 0.2s ease;
-    background-color:#7846e9dd;
     box-shadow: 0 0 1px 1px #5020ff;
     box-sizing: content-box;
-    width: fit-content;
+    min-width: 10rem;
+    background-color: rgba(120, 70, 233, 1);
+    border: 1px solid #6668;
+    border-radius: 0.35rem;
+    transition: 0.2s ease;
+    cursor: pointer;
 }
 
 #contact button:hover {
-    transform: scale(1.03);
-    background-color: #6420ffdd;
+    transform: translate(0px, -2px) scale(1.02);
+    background-color: var(--purple);
 }
 
 #contact button:active {
@@ -1398,17 +1405,28 @@ footer {
     background-color: rgb(100, 45, 179);
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
 }
-
+@media (max-width: 576px) {
+    footer {
+        padding: 0 1rem;
+    }
+}
 .footer-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 15vh;
     width: min(80rem,100%) ;
     min-height: 18vh;
 }
-
+@media (max-width: 576px) {
+    .footer-top {
+        flex-direction: column-reverse;
+        min-height: 15rem;
+        align-items: flex-start;
+        align-content: space-between;
+        padding: 2rem 0 ;
+    }
+}
 .footer-bottom {
     display: flex;
     min-height: 5vh;
@@ -1426,11 +1444,23 @@ footer {
     font-size: 0.8rem;
 }
 
+@media (max-width: 576px) {
+    .footer-bottom {
+        padding: 1rem 0;
+    }
+}
+
 .footer-top-left {
     width: min(30rem, 60%);
     flex-direction: column;
     justify-content: center;
     min-height: auto;
+}
+@media (max-width: 576px) {
+    .footer-top-left {
+        width: auto;
+        padding-top: 2rem;
+    }
 }
 
 .footer-top-left > *, .footer-top-right > *, .footer-bottom > div > * {
