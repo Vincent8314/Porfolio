@@ -64,7 +64,6 @@ h3 {
     --primary-white-no-filter: rgba(250, 250, 250, 1);
     --text-white-grey-blue: rgba(238, 238, 255, 1);
     --blue-link: rgba(0, 0, 255, 0.75);
-    --blue-link-0: rgba(68, 68, 255, 0.75);
     --pink-purple-withe: rgba(203, 171, 255,1); 
 }
 /* ==========================================================================
@@ -446,7 +445,7 @@ main {
     z-index: 1;
 }
 
-#home > .svg { /* svg social media */
+.container-icons { /* svg social media */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -462,45 +461,45 @@ main {
     border-radius: 0 0.3rem 0.3rem 0;
 }
 
-.svg {
+.container-icons {
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
     z-index: 3;
 }
 
-.svg > a {
+.container-icons > a {
     display: inline-block;
     min-width: 3rem;
     min-height: 3rem;
 }
 
-.svg > a:nth-child(1) {
+.container-icons > a:nth-child(1) {
     margin: 0.75rem 0 1.25rem 0;
     padding: 0;
 }
-.svg > a:nth-child(2) {
+.container-icons > a:nth-child(2) {
     margin: 0 0 1.25rem 0;
     padding: 0;
 }
-.svg > a:nth-child(3) {
+.container-icons > a:nth-child(3) {
     margin: 0 0 0.5rem 0;
     padding: 0;
 }
 
-.svg > a > .svg-style {
+.container-icons > a > .social-icon {
     display: inline-block;
     fill:#7846e9;
     min-width: 3rem;
     min-height: 3rem;
     transition: 0.2s ease;
 }
-.svg > a > .svg-style:hover {
+.container-icons > a > .social-icon:hover {
     display: inline-block;
     fill: #6420ff;
     min-width: 3rem;
     min-height: 3rem;
     transform: scale(1.05);
 }
-.svg > a > .svg-style:active {
+.container-icons > a > .social-icon:active {
     display: inline-block;
     fill: #5020ff;
     min-width: 3rem;
@@ -1122,7 +1121,7 @@ button a {
     /* Mobile - Small Screens */
 @media (max-width: 768px) {
     
-    #home>.svg {
+    #home>.container-icons {
         display: none;
     }
 
@@ -1192,7 +1191,7 @@ button a {
         background-color: var(--primary-white-no-filter);
     }
 
-    #home>.svg {
+    .container-icons {
         display: none;
     }
 
@@ -1252,7 +1251,7 @@ button a {
         max-height: 7.1rem;
     }
 
-    #home>.svg {
+    .container-icons {
     display: none;
     }
 
