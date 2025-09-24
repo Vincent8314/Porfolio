@@ -6,11 +6,11 @@
     margin: 0;
     padding: 0;
     font-size: 16px;
-    color: var(--text-grey-black);
 }
 body {
     margin: 0;
     padding: 0;
+    color: var(--text-grey-black);
     background-color: #fff;
     position: relative;
     font-family: "Source Sans 3", sans-serif;
@@ -52,7 +52,8 @@ h3 {
 /* COLOR VARIABLES */
 /* ========================================================================== */
 :root {
-    --text-grey-black: rgba(34, 34, 34, 1);
+    --text-grey-black: rgba(24, 24, 24, 1);
+    --text-grey: rgba(36, 36, 36, 1);
     --text-white: rgba(230, 230, 230, 1);
     --purple: rgba(120, 70, 233, 1);
     --primary-white: rgba(250, 250, 250, 0.97);
@@ -255,11 +256,11 @@ nav > .menu-large > ul {
     align-items: center;
 }
 nav > .menu-large > ul > li {
-    color: #333;
+    color: var(--text-grey-black);
     padding-left: 2rem;
 }
 nav > .menu-large > ul > li > a {
-    color: #333;
+    color: var(--text-grey-black);
     padding-left: 1rem;
     font-weight: 600;
     font-size: 1.4rem;
@@ -421,13 +422,13 @@ main {
 }
 .container-icons > a > .social-icon {
     display: inline-block;
-    fill: #7846e9;
+    fill: #6420ff;
     min-width: 3rem;
     min-height: 3rem;
     transition: 0.2s ease;
 }
 .container-icons > a > .social-icon:hover {
-    fill: #6420ff;
+    fill: #5020ff;
     transform: scale(1.05);
 }
 .container-icons > a > .social-icon:active {
@@ -451,22 +452,30 @@ main {
     min-width: 100%;
     height: 80%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .home-paragraph-top h1 {
     text-align: center;
     font-size: 3.5rem;
     padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0 0 0 ;
 }
+
+@media (max-width: 996px) {
+    .home-paragraph h1 {
+        text-align: center;
+        font-size: 3.5rem;
+        padding: 0;
+        margin: 2rem 0 1rem 0;
+    }
+}
+
 @media (max-width: 768px) {
     .home-paragraph h1 {
         text-align: center;
         font-size: 3.25rem;
         padding: 0;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
+        margin: 2rem 0 2rem 0;
     }
 }
 
@@ -475,8 +484,8 @@ main {
         text-align: center;
         font-size: 3rem;
         padding: 0;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 1.75rem 0 1.5rem 0;
+        /* margin-bottom: 1rem; */
     }
 }
 
@@ -485,21 +494,21 @@ main {
         text-align: center;
         font-size: 2.75rem;
         padding: 0;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin: 2rem 0 1.5rem 0;
+        /* margin-bottom: 1rem; */
     }
 }
 .home-paragraph-top > h2 {
-    max-width: 70%;
+    max-width: 50rem;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.025rem;
     word-spacing: 0.05rem;
-    margin: 0 auto 1rem auto;
+    margin: -1rem auto 1rem auto;
     text-align: center;
 }
 @media (max-width: 996px) {
-
+    
     .home-paragraph h2 {
         max-width: 80%;
         font-size: 1.875rem;
@@ -507,31 +516,43 @@ main {
         letter-spacing: 0.04rem;
         text-align: center;
         padding: 0;
-        margin: 0 auto 1rem auto;
+        margin: -1rem auto 1rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-paragraph h2 {
+        max-width: 80%;
+        font-size: 1.875rem;
+        font-weight: 700;
+        letter-spacing: 0.04rem;
+        text-align: center;
+        padding: 0;
+        margin: -1rem auto 1rem auto;      
     }
 }
 
 @media (max-width: 670px) {
     .home-paragraph h2 {
         max-width: 90%;
-        font-size: 1.875rem;
+        font-size: 1.8rem;
         font-weight: 700;
         letter-spacing: 0.04rem;
         text-align: center;
         padding: 0;
-        margin: 0 auto 1rem auto;
+        margin: -0.75rem auto 1rem auto;
     }
 }
 @media (max-width: 576px) {
     .home-paragraph h2 {
         max-width: 90%;
         min-width: 90%;
-        font-size: 1.875rem;
+        font-size: 1.75rem;
         font-weight: 700;
         letter-spacing: 0.04rem;
         text-align: center;
         padding: 0;
-        margin: 0 auto 1rem auto;
+        margin: -0.5rem auto 1rem auto;
     }
 }
 .home-paragraph-top > h2 > span {
@@ -600,16 +621,17 @@ main {
     display: flex;
     min-height: 20%;
     max-height: 20;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex-direction: column-reverse;
+    margin: 0 0 -0.5rem 0;
 }
 
 /* MOUSSE ANIMATION */
 .home-paragraph-bottom>.mousse-animation {
     display: flex;
     background-color: var(--pink-purple-withe);
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2.5rem auto;
     min-height: 3.5rem;
     min-width: 2.2rem;
     border-radius: 2rem;
@@ -673,6 +695,7 @@ main {
 /* ABOUT HEADER */
 .div-header {
     display: flex;
+    color: var(--text-grey-black);
     max-height: auto;
     min-width: 100%;
     position: relative;
@@ -705,7 +728,7 @@ main {
 .div-header > p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 2%;
     text-shadow: 0px 0px 1px #fff;
 }
@@ -752,7 +775,7 @@ main {
 .about-left > p {
     display: inline-block;
     font-size: 1.2rem;
-    color: #333;
+    color: var(--text-grey-black);
     margin: 0;
     padding: 0 9% 0 0;
 }
@@ -803,6 +826,7 @@ main {
 /* ABOUT RIGHT */
 .about-right {
     display: flex;
+    color: var(--text-grey-black);
     flex-direction: column;
     width: min(35rem, 37%);
     height: auto;
@@ -825,6 +849,7 @@ main {
 }
 .about-right > .skills {
     display: flex;
+    color: var(--text-grey);
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0;
@@ -909,9 +934,8 @@ main {
 /* PROJECT LEFT */
 .project-left {
     display: flex;
-    width: min(50rem, 99%);
+    max-width: 50%;
     flex-direction: row-reverse;
-    width: 50%;
     padding: 0 0 0 2rem;
 }
 @media (max-width: 996px) {
@@ -941,11 +965,19 @@ main {
 .project-right {
     display: flex;
     max-width: 50%;
-    height: auto;
+    min-height: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
+    justify-content: start;
 }
+
+.project-right > div {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    width: min(35rem, 90%);
+}
+
 @media (max-width: 996px) {
     .project-right {
         max-width: 100%;
@@ -953,17 +985,15 @@ main {
         align-content: space-between;
     }
 }
-.project-right > h3 {
-    display: block;
+.project-right > div > h3 {
     font-size: 2rem;
     margin: 0;
     padding: 0 0 2rem 0;
 }
-.project-right > p {
-    display: block;
+.project-right > div > p {
     font-size: 1.2rem;
-    color: #333;
-    margin: 0;
+    color: var(--text-grey-black);
+    margin: 0 0 2rem 0;
     padding: 0;
 }
 @media (max-width: 996px) {
@@ -973,10 +1003,8 @@ main {
         padding: 0 0 2.5rem 0;
     }
 }
-.project-right > button {
-    display: block;
+.project-right > div > button {
     max-width: 15rem;
-    margin: auto;
     padding: 0;
     background-color: var(--purple);
     box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
@@ -988,7 +1016,7 @@ main {
     border: 1px solid #6668;
     transition: 0.2s ease;
 }
-.project-right > button > a {
+.project-right > div > button > a {
     padding: 0.75rem 3rem;
     display: inline-block;
     font-size: 1.5rem;
