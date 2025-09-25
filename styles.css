@@ -1264,7 +1264,7 @@ footer {
     padding-top: 0.5rem;
     margin: 0;
 }
-.footer-top-right > div > a > .social-icon {
+.footer-top-right > div > a > .social-icon-footer {
     display: flex;
     min-width: 2.25rem;
     min-height: 3rem;
