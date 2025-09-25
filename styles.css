@@ -1273,6 +1273,10 @@ footer {
     z-index: auto;
 }
 
+.footer-top-right > div > a > .social-icon > path {
+    fill: "#ff0000";
+}
+
 .footer-top-right > div > a:nth-child(1) {
     margin-left: -0.1rem;
     margin-right: 0.7rem;
