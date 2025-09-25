@@ -1269,12 +1269,10 @@ footer {
     min-width: 2.25rem;
     min-height: 3rem;
     transition: 0.2s ease;
-    fill: #ddd;
-    z-index: auto;
 }
 
-.footer-top-right > div > a > .social-icon > path {
-    fill: "#ff0000";
+svg {
+  filter: brightness(0%) saturate(0%);
 }
 
 .footer-top-right > div > a:nth-child(1) {
@@ -1290,11 +1288,10 @@ footer {
     margin-right: 0;
 }
 
-.footer-top-right > div > a > .social-icon:hover {
-    fill: #f8f8f8;
+.footer-top-right > div > a > .social-icon-footer:hover {
     transform: scale(1.05);
 }
-.footer-top-right > div > a > .social-icon:active {
+.footer-top-right > div > a > .social-icon-footer:active {
     transform: scale(1.0);
 }
 
@@ -1315,3 +1312,7 @@ footer {
     padding: 0;
     margin: 0.25rem;
 } */
+
+.footer-top > .footer-top-right > div > a > .social-icon-footer > svg {
+      filter: brightness(0) saturate(100%) invert(93%) sepia(8%) saturate(1567%) hue-rotate(202deg) brightness(103%) contrast(101%);
+}
