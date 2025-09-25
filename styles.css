@@ -865,6 +865,7 @@ main {
     position: relative;
     min-width: 100%;
     min-height: 100vh;
+    max-height: auto;
     margin: 0;
     padding: 0;
     background: linear-gradient(180deg, rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
@@ -1265,10 +1266,11 @@ footer {
 }
 .footer-top-right > div > a > .social-icon {
     display: flex;
-    fill: #ddd;
     min-width: 2.25rem;
     min-height: 3rem;
     transition: 0.2s ease;
+    fill: #ddd;
+    z-index: auto;
 }
 
 .footer-top-right > div > a:nth-child(1) {
@@ -1289,7 +1291,6 @@ footer {
     transform: scale(1.05);
 }
 .footer-top-right > div > a > .social-icon:active {
-    fill: #5020ff;
     transform: scale(1.0);
 }
 
