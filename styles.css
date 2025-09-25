@@ -57,8 +57,8 @@ h3 {
     --text-white: rgba(230, 230, 230, 1);
     --purple: rgba(100, 32, 255, 1);
     --primary-white: rgba(250, 250, 250, 0.97);
-    --primary-white-no-filter: rgba(250, 250, 250, 1);
-    --text-white-grey-blue: rgba(238, 238, 255, 1);
+    --primary-white-no-filter: rgba(255, 255, 255, 1);
+    --white: rgba(252, 252, 255, 1);
     --blue-link: rgba(0, 0, 255, 0.75);
     --pink-purple-withe: rgba(203, 171, 255, 1);
     --shadow-button: rgba(120, 70, 233, 0.35);
@@ -1196,7 +1196,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: min(80rem, 100%);
-    border-top: 1px solid var(--text-white-grey-blue);
+    border-top: 1px solid var(--white);
     padding: 0;
     margin: 0;
     margin-bottom: 0.125rem;
@@ -1227,7 +1227,7 @@ footer {
 .footer-top-left > *,
 .footer-top-right > *,
 .footer-bottom > div > * {
-    color: rgb(248, 248, 248);
+    color: var(--primary-white-no-filter);
 }
 .footer-top-left h2 {
     font-size: 1.4rem;
