@@ -44,6 +44,34 @@ allLinks.forEach(link => {
     });
 });
 
+const projectButton = document.querySelector('.home-paragraph button a[href="#project"]');
+const contactButton = document.querySelector('.about-left button a[href="#contact"]');
+
+// Function to scroll with delay
+function scrollWithDelay(targetId, delay = 150) {
+    setTimeout(() => {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }, delay);
+}
+
+// Event listeners for buttons
+projectButton?.addEventListener('click', e => {
+    e.preventDefault();
+    scrollWithDelay('#project');
+});
+
+contactButton?.addEventListener('click', e => {
+    e.preventDefault();
+    scrollWithDelay('#contact');
+});
+
+
 document.querySelectorAll('#contact input, #contact textarea').forEach(field => {
     field.addEventListener('focus', () => {
         field.parentNode.querySelector('p').style.color = 'var(--purple)';

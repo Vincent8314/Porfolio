@@ -55,12 +55,13 @@ h3 {
     --text-grey-black: rgba(24, 24, 24, 1);
     --text-grey: rgba(36, 36, 36, 1);
     --text-white: rgba(230, 230, 230, 1);
-    --purple: rgba(120, 70, 233, 1);
+    --purple: rgba(100, 32, 255, 1);
     --primary-white: rgba(250, 250, 250, 0.97);
     --primary-white-no-filter: rgba(250, 250, 250, 1);
     --text-white-grey-blue: rgba(238, 238, 255, 1);
     --blue-link: rgba(0, 0, 255, 0.75);
     --pink-purple-withe: rgba(203, 171, 255, 1);
+    --shadow-button: rgba(120, 70, 233, 0.35);
 }
 
 /* ========================================================================== */
@@ -560,49 +561,35 @@ main {
     font-weight: inherit;
     word-spacing: -0.2rem;
 }
+
 .home-paragraph button {
     margin: 0 ;
     padding: 0;
     width: clamp(10rem, auto, 80%);
     max-width: 50%;
     min-width: 10rem;
-    max-height: min-content;
     text-align: center;
     font-weight: 500;
     color: var(--primary-white);
-    background-color: rgba(120, 70, 233, 1);
+    background-color: var(--purple);
     border-radius: 0.35rem;
-    border: 1px solid #6668;
     transition: 0.2s ease;
+    border: 1px solid var(--purple); 
+    box-shadow: 0 4px 16px 0 var(--shadow-button); 
 }
+
 @media (max-width: 768px) {
     .home-paragraph button {
-        max-width: 50%;
-        text-align: center;
-        font-weight: 500;
         margin: 3rem auto;
-        padding: 0;
-        color: var(--primary-white);
-        background-color: rgba(120, 70, 233, 1);
-        border-radius: 0.35rem;
-        border: 1px solid #6668;
-        transition: 0.2s ease;
     }
 }
+
 @media (max-width: 670px) {
     .home-paragraph button {
-        max-width: 50%;
-        text-align: center;
-        font-weight: 500;
         margin: 2.5rem auto;
-        padding: 0;
-        color: var(--primary-white);
-        background-color: rgba(120, 70, 233, 1);
-        border-radius: 0.35rem;
-        border: 1px solid #6668;
-        transition: 0.2s ease;
     }
 }
+
 .home-paragraph > .home-paragraph-top > div > button > a {
     padding: 0.75rem 1.5rem;
     display: inline-block;
@@ -795,25 +782,25 @@ main {
     text-decoration: 2px solid underline;
 }
 .about-left > button {
-    margin-left: 0;
-    margin-right: auto;
     min-width: 10rem;
-    padding: 0;
-    font-weight: 500;
     margin: 2rem auto 4rem 0;
-    background-color: var(--purple);
-    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
-    transition: 0.3s ease;
-    border-radius: 0.35rem;
-    border: 1px solid #6668;
+    max-width: 50%;
+    min-width: 10rem;
+    text-align: center;
+    font-weight: 500;
     color: var(--primary-white);
+    background-color: var(--purple);
+    border-radius: 0.35rem;
+    transition: 0.2s ease;
+    border: 1px solid var(--purple); 
+    box-shadow: 0 4px 16px 0 var(--shadow-button); 
 }
+
 .about-left > button > a {
     padding: 0.75rem 3rem;
     display: inline-block;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
-    text-shadow: 1px 1px #ffffff33;
     width: 100%;
 }
 .about-left > button:hover {
@@ -1004,32 +991,33 @@ main {
     }
 }
 .project-right > div > button {
-    max-width: 15rem;
-    padding: 0;
-    background-color: var(--purple);
-    box-shadow: 0 0 2px 1px rgba(256, 256, 256, 0.4);
-    transition: 0.3s ease;
+    min-width: 12rem;
+    margin: 2rem auto 4rem 0;
+    min-width: 10rem;
+    text-align: center;
     font-weight: 500;
     color: var(--primary-white);
-    background-color: rgba(120, 70, 233, 1);
+    background-color: var(--purple);
     border-radius: 0.35rem;
-    border: 1px solid #6668;
     transition: 0.2s ease;
+    border: 1px solid var(--purple); 
+    box-shadow: 0 4px 16px 0 var(--shadow-button); 
 }
 .project-right > div > button > a {
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 2rem;
     display: inline-block;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
-    text-shadow: 1px 1px #ffffff33;
     width: 100%;
+    min-width: 12rem;
 }
-.project-right > button:hover {
+.project-right > div > button:hover {
     transform: translate(0px, -2px) scale(1.02);
 }
-.project-right > button:active {
+.project-right > div > button:active {
     transform: scale(1);
 }
+
 
 /* ========================================================================== */
 /* CONTACT SECTION */
