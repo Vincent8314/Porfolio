@@ -811,11 +811,19 @@ main {
     border: 1px solid var(--purple); 
     box-shadow: 0 4px 16px 0 var(--shadow-button); 
 }
+@media (max-width: 570px) {
+    .about-left > button {
+           margin: 2rem auto 4rem auto;
+    }  
+}
+
+
 
 .about-left > button > a {
     padding: 0.75rem 3rem;
     display: inline-block;
     font-size: 1.5rem;
+    text-align: center;
     letter-spacing: 0.1rem;
     width: 100%;
 }
