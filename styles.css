@@ -90,17 +90,17 @@ header {
         max-height: 7.6rem;
     }
 }
-@media (max-width: 576px) {
-    header {
-        min-height: 7.1rem;
-        max-height: 7.1rem;
-    }
-}
 @media (max-width: 768px) {
     header {
         min-height: 7.85rem;
         max-height: 7.85rem;
         background-color: var(--primary-white-no-filter);
+    }
+}
+@media (max-width: 576px) {
+    header {
+        min-height: 7.1rem;
+        max-height: 7.1rem;
     }
 }
 
@@ -167,6 +167,13 @@ header {
     margin: 0;
     box-sizing: content-box;
 }
+@media (max-width: 768px) {
+    .off-screen-menu {
+        display: flex;
+        top: 7.75rem;
+        background-color: var(--primary-white-no-filter);
+    }
+}
 @media (max-width: 670px) {
     .off-screen-menu {
         display: flex;
@@ -178,13 +185,6 @@ header {
     .off-screen-menu {
         display: flex;
         top: 7rem;
-        background-color: var(--primary-white-no-filter);
-    }
-}
-@media (max-width: 768px) {
-    .off-screen-menu {
-        display: flex;
-        top: 7.75rem;
         background-color: var(--primary-white-no-filter);
     }
 }
@@ -701,6 +701,8 @@ main {
     letter-spacing: 0.085rem;
     word-spacing: 0.2rem;
     text-shadow: 0px 0px 1px #fff;
+    width: min(50rem, 85%);
+    text-align: center;
 }
 .divider {
     display: block;
@@ -718,9 +720,6 @@ main {
     font-weight: 600;
     padding-bottom: 2%;
     text-shadow: 0px 0px 1px #fff;
-}
-.div-header > h2,
-.div-header > p {
     width: min(50rem, 85%);
     text-align: center;
 }
@@ -875,7 +874,7 @@ main {
 }
 
 /* PROJECT HEADER */
-.project-header,
+
 .div-header {
     display: flex;
     max-height: auto;
@@ -886,58 +885,45 @@ main {
     flex-direction: column;
     transition: 0.5s ease;
 }
-.project-header > * {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-}
-.project-header > h2 {
-    font-size: 2.75rem;
-    letter-spacing: 0.085rem;
-    word-spacing: 0.2rem;
-    text-shadow: 0px 0px 1px #fff;
-}
-.project-header > p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    padding-bottom: 2%;
-    text-shadow: 0px 0px 1px #fff;
-}
 
 /* PROJECT CONTENT */
 .project-content {
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    padding: 0 0 2.5rem 0;
+    padding-bottom: 2.5rem;
 }
 @media (max-width: 996px) {
     .project-content {
         flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
     }
 }
 
 /* PROJECT LEFT */
 .project-left {
     display: flex;
-    max-width: 50%;
+    width: auto;
     flex-direction: row-reverse;
     padding: 0 0 0 2rem;
 }
 @media (max-width: 996px) {
     .project-left {
-        flex-direction: row-reverse;
-        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 90%;
+        min-width: 80%;
         padding: 0 2rem 1.5rem;
     }
 }
 @media (max-width: 768px) {
     .project-left {
+        max-width: 95%;
+        min-width: 95%;
         height: auto;
-        justify-content: center;
         margin: 0 auto;
+        justify-content: center;
         padding: min(1rem, 3%);
     }
 }
@@ -957,45 +943,79 @@ main {
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
-    justify-content: start;
-}
-
-.project-right > div {
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
-    width: min(35rem, 90%);
+    justify-content: space-between;
 }
 
 @media (max-width: 996px) {
     .project-right {
         max-width: 100%;
-        justify-content: center;
-        align-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 0;
+        min-height: auto;
+        max-width: 90%;
+        min-width: 80%;
     }
 }
-.project-right > div > h3 {
+@media (max-width: 768px) {
+    .project-right {
+        min-height: auto;
+        max-width: 95%;
+        min-width: 95%;
+        padding: 0;
+    }
+}
+
+.project-right > div:nth-child(1) {
+    display: flex;
+    height: auto;    
+    flex-direction: column;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    width: min(50rem, 90%);
+}
+@media(max-width: 996px) {
+    .project-right > div:nth-child(1) {
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        width: min(50rem,90%);
+    }
+}
+@media (max-width: 768px) {
+    .project-right > div:nth-child(1) {
+        max-width: 95%;
+        min-width: 95%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
+
+.project-right > div:nth-child(1) > h3 {
     font-size: 2rem;
     margin: 0;
     padding: 0 0 2rem 0;
 }
-.project-right > div > p {
+.project-right > div:nth-child(1) > p {
     font-size: 1.2rem;
     color: var(--text-grey-black);
-    margin: 0 0 2rem 0;
     padding: 0;
 }
 @media (max-width: 996px) {
-    .project-right > p {
+    .project-right > div:nth-child(1) > p {
         max-width: 100%;
-        text-align: center;
         padding: 0 0 2.5rem 0;
+        text-align: center;
     }
 }
-.project-right > div > button {
+
+.project-right > div:nth-child(2) {
+    display: flex;
+}
+
+.project-right > div:nth-child(2) > button {
     min-width: 12rem;
-    margin: 2rem auto 4rem 0;
     min-width: 10rem;
-    text-align: center;
     font-weight: 500;
     color: var(--primary-white);
     background-color: var(--purple);
@@ -1004,7 +1024,15 @@ main {
     border: 1px solid var(--purple); 
     box-shadow: 0 4px 16px 0 var(--shadow-button); 
 }
-.project-right > div > button > a {
+@media(max-width: 996px) {
+    .project-right > div:nth-child(2) > button {
+        margin: auto;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+}
+
+.project-right > div:nth-child(2) > button > a {
     padding: 0.75rem 2rem;
     display: inline-block;
     font-size: 1.5rem;
@@ -1012,10 +1040,10 @@ main {
     width: 100%;
     min-width: 12rem;
 }
-.project-right > div > button:hover {
+.project-right > div:nth-child(2) > button:hover {
     transform: translate(0px, -2px) scale(1.02);
 }
-.project-right > div > button:active {
+.project-right > div:nth-child(2) > button:active {
     transform: scale(1);
 }
 
@@ -1036,45 +1064,6 @@ main {
     justify-content: left;
     align-items: center;
 }
-.div-header {
-    display: flex;
-    max-height: auto;
-    min-width: 100%;
-    position: relative;
-    padding-top: 8rem;
-    top: 0;
-    flex-direction: column;
-    transition: 0.5s ease;
-}
-.div-header > h2 {
-    font-size: 2.75rem;
-    letter-spacing: 0.085rem;
-    word-spacing: 0.2rem;
-    text-shadow: 0px 0px 1px #fff;
-}
-.divider {
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: var(--blue-link);
-    margin: 1rem auto 1.25rem;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0 1px 1px rgba(256, 256, 256, 0.2);
-}
-.div-header > p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    padding-bottom: 2%;
-    text-shadow: 0px 0px 1px #fff;
-}
-.div-header > h2,
-.div-header > p {
-    width: min(50rem, 85%);
-    text-align: center;
-}
-
 /* CONTACT FORM */
 .contact-form,
 #contact > form {
@@ -1279,5 +1268,5 @@ footer {
     margin-right: 0.5rem; 
 }
 .flex-container-icon > a:nth-child(3) {
-    margin-right: 1rem;
+    margin-right: 0;
 }
