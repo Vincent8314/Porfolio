@@ -84,23 +84,23 @@ header {
     transition: 0.5s ease;
     z-index: 1000;
 }
-@media (max-width: 670px) {
-    header {
-        min-height: 7.6rem;
-        max-height: 7.6rem;
-    }
-}
 @media (max-width: 768px) {
     header {
-        min-height: 7.85rem;
-        max-height: 7.85rem;
+        min-height: 7.75rem;
+        max-height: 7.75rem;
         background-color: var(--primary-white-no-filter);
+    }
+}
+@media (max-width: 670px) {
+    header {
+        min-height: 7.5rem;
+        max-height: 7.5rem;
     }
 }
 @media (max-width: 576px) {
     header {
-        min-height: 7.1rem;
-        max-height: 7.1rem;
+        min-height: 7rem;
+        max-height: 7rem;
     }
 }
 
@@ -673,12 +673,12 @@ main {
 }
 @media (max-width: 670px) {
     .div-header {
-        padding-top: 7.25;
+        padding-top: 7.5;
     }
 }
 @media (max-width: 576px) {
     .div-header {
-        padding-top: 6.75rem;
+        padding-top: 7rem;
     }
 }
 
