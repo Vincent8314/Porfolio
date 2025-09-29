@@ -654,32 +654,7 @@ main {
         min-width: 90%;
     }
 }
-
-/* ========================================================================== */
-/* ABOUT SECTION */
-/* ========================================================================== */
-#about {
-    display: flex;
-    height: auto;
-    position: relative;
-    min-width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-}
-@media (max-width: 996px) {
-    #about {
-        color: var(--purple);
-        height: auto;
-        position: relative;
-    }
-}
-
-/* ABOUT HEADER */
+/******************** HEADER ALL SECTION ************************/
 .div-header {
     display: flex;
     color: var(--text-grey-black);
@@ -691,6 +666,22 @@ main {
     flex-direction: column;
     transition: 0.5s ease;
 }
+@media (max-width: 768px) {
+    .div-header {
+        padding-top: 7.75rem;
+    }
+}
+@media (max-width: 670px) {
+    .div-header {
+        padding-top: 7.25;
+    }
+}
+@media (max-width: 576px) {
+    .div-header {
+        padding-top: 6.75rem;
+    }
+}
+
 .div-header > * {
     margin-left: auto;
     margin-right: auto;
@@ -723,6 +714,32 @@ main {
     width: min(50rem, 85%);
     text-align: center;
 }
+
+/* ========================================================================== */
+/* ABOUT SECTION */
+/* ========================================================================== */
+#about {
+    display: flex;
+    height: auto;
+    position: relative;
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, rgba(188, 152, 255, 1) 0%, rgba(188, 152, 255, 0.75) 15%, rgba(188, 152, 255, 0.5) 30%, rgba(188, 152, 255, 0.5) 100%);
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+@media (max-width: 996px) {
+    #about {
+        color: var(--purple);
+        height: auto;
+        position: relative;
+    }
+}
+
+/* ABOUT HEADER */
 
 /* ABOUT CONTENT */
 .about-content {
@@ -871,19 +888,6 @@ main {
     flex-direction: column;
     justify-content: left;
     align-items: center;
-}
-
-/* PROJECT HEADER */
-
-.div-header {
-    display: flex;
-    max-height: auto;
-    min-width: 100%;
-    position: relative;
-    padding-top: 8rem;
-    top: 0;
-    flex-direction: column;
-    transition: 0.5s ease;
 }
 
 /* PROJECT CONTENT */
